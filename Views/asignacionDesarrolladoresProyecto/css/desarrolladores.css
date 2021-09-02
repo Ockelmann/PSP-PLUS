@@ -1,0 +1,42 @@
+.project {
+  font-family: Roboto, sans-serif;
+}
+.project__title {
+  font-size: 1.9em;
+  font-weight: 700;
+}
+
+html{
+  min-height: 100%;
+  position: relative;
+}
+
+body{
+  margin: 0;
+  margin-bottom: 100px;
+}
+
+.project__subtitle {
+  font-size: 1.3em;
+  color: gray;
+}
+
+.project__button {
+  width: 8em;
+  font-size: 1.5em;
+  background: #3D9BE9 !important;
+  margin: 5em;
+}
+
+
+footer {
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

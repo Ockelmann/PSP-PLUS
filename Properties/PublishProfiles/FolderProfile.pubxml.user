@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\inetpub\tt</_PublishTargetUrl>
+    <History>True|2021-08-26T14:59:40.2047262Z;True|2021-08-26T08:47:07.3595151-06:00;False|2021-08-26T08:46:41.1071878-06:00;True|2021-08-25T09:13:39.0159062-06:00;True|2021-08-24T17:06:33.7540513-06:00;True|2021-08-24T17:01:45.5087953-06:00;True|2021-08-24T16:40:03.0630661-06:00;True|2021-08-24T16:09:25.2631399-06:00;False|2021-08-24T16:07:54.3309185-06:00;True|2021-08-13T09:16:54.2683782-06:00;</History>
+  </PropertyGroup>
+</Project>

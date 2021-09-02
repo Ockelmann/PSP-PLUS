@@ -1,0 +1,44 @@
+.form-container {
+  font-family: Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+html{
+  min-height: 100%;
+  position: relative;
+}
+
+body{
+  margin: 0;
+  margin-bottom: 100px;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.form-select {
+  background-color: #cacacac9 !important;
+  width: 20em;
+}
+
+.button {
+  width: 8em;
+  font-size: 1.5em;
+  background: #3D9BE9 !important;
+  border-radius: 25px;
+}
+footer {
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

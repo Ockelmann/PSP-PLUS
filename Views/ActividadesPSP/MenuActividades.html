@@ -1,0 +1,78 @@
+<!-- DOCUMENTO RELIZADO POR: Erick Eduardo Echeverría Garrido (EE) 5/08/2021 -->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PSP+ | Mis Actividades PSP</title>
+        <link rel="icon" href="../img/logo-negro.svg">
+        <!-- CSS Bootstrap v5-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <!-- CSS Main -->
+        <link rel="stylesheet" href="./css/estilos.css" />
+        <link rel="stylesheet" href="../Navbar/nav.css">
+        <link rel="icon" type="image/png" href="../img/icon.png">
+    </head>
+    <body>
+        <header id="header">
+  
+        </header>
+        <div class="contenedor" id="formulario">
+            <h1 class="tituloProyecto">Tiempos PSP</h1>
+            <div class="boton-agregarActividad"> <img src="./img/signoMass.svg"">Actividad</div>
+            <br>
+            <div class="boton-agregarError"> <img src="./img/signoMass.svg"">Error</div>
+            <h2 class="tiempoProyecto" id="tiempoProyecto">Tiempo Invertido: -------  </h2>
+            <br>
+            <select class="input-group form-control" id="proyectos-listado" name="proyectos-listado">
+                <option value="" disabled selected>-- Filtrar --</option>
+                <option value="0">Sin Filtro</option>
+                <option value="SinProyecto">Sin Proyecto</option>
+            </select>
+            <br>
+
+            <div class="input-group">
+                <div class="fechaFiltrados">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Del </span>
+                        <input id="fechaInicio" type="date" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <span class="input-group-text" id="basic-addon1"> al </span>
+                        <input id="fechaFinal" type="date" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+
+            <div id="actividades">
+                
+            </div>
+            <br>
+            <div class="alert alert-secondary" role="alert" id="alert" style="text-align: center; display: none;">
+                Aún no hay actividades registradas
+            </div>
+
+        </div>
+        <footer>
+            <img src="../img/LOGOPLUSTI 2.svg" id="" alt="" width="140px">
+        </footer>
+        
+        <script src="../Navbar/accionnav.js"></script>
+        <script src="../sessiontime.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+        <script src="../global/globals.js"></script>
+        <script src="./js/menuActividades.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script> 
+        </body>
+</html>

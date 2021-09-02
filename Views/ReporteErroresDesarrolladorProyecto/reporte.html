@@ -1,0 +1,100 @@
+<!--
+    Desarrollador: Rogelio Raúl Castañeda Flores
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSP+ | Reporte</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/reporte.css">
+    <link rel="stylesheet" href="../Navbar/nav.css">
+</head>
+
+<body>
+    <header id="header">
+
+    </header>
+
+    <div class="container">
+
+        <h1 style="margin-bottom: 20px;">Reporte</h1>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <div id="button-container">
+                <div class="div button-export">
+                    <button type="button" class="btn export-btn" id="export-excel" onclick="">Exportar Excel</button>
+
+                </div>
+                <div class="div button-export">
+                    <button type="button" class="btn export-btn" id="export-pdf" onclick="">Exportar PDF</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group rounded" id="input-container"
+            style="display: flex; justify-content: center; align-items: center;">
+            <div style="padding: 10px;" class="combo-container" id="dev-container">
+                <select id="select-dev" name="desarrollador" class="form-select combo"
+                    aria-label="Seleccione desarrollador" onchange="cargarProyectos()"></select>
+            </div>
+            <div style="padding: 10px;" class="combo-container">
+                <select id="select-project" name="desarrollador" class="form-select combo"
+                    aria-label="Seleccione desarrollador" onchange="validarAccion()"></select>
+            </div>
+            <a onclick="BusquedaReporte()" id="editar">
+                <img src="./img/search.svg" id="imgeditar" alt="" style=" width: 45px;">
+            </a >
+        </div>
+        <div class="alert alert-danger" id="alert" role="alert" style="display: none;">
+
+        </div>
+        <div class="table-responsive" style="margin-top: 25px;" id="Reporte">
+            <h3 class="titulo">Errores por desarrollador y proyecto</h3>
+            <table class="table table-light table-bordered" style="text-align: center;">
+                <thead class="table" style="background-color: #021329; color: white;">
+                    <th>Correlativo</th>
+                    <th>Descripción</th>
+                    <th>Solución</th>
+                    <th>Fecha Hora Inicio</th>
+                    <th>Fecha Hora Final</th>
+                    <th>Tipo</th>
+                    <th>Introducido</th>
+                    <th>Eliminado</th>
+                    <th>Tiempo de corrección hrs</th>
+                </thead>
+                <tbody id="lista-errores" style="background-color: D8D8D8; color: #000;">
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <footer>
+        <img src="../img/LOGOPLUSTI 2.svg" id="" alt="" width="140px">
+    </footer>
+    <script src="../html2pdf.bundle.min.js"></script>
+    <script src="../TabletoExcel.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="../Navbar/accionnav.js"></script>
+    <script src="../sessiontime.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="./js/reporte.js"></script>
+</body>
+
+</html>

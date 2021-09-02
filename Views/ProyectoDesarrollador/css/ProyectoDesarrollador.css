@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html{
+    min-height: 100%;
+    position: relative;
+}
+
+body{
+    margin: 0;
+    margin-bottom: 100px;
+}
+
+.form-control {
+    background-color: #CACACA;
+}
+
+ ::placeholder {
+    color: #000000 !important;
+}
+
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn {
+    border-radius: 8px;
+    background-color: #3D9BE9;
+    color: #F3F3F3;
+    width: 187px;
+    height: 50px;
+}
+
+#editar:hover{
+    cursor: pointer;
+}
+
+#imgProyecto {
+    margin-bottom: 45px;
+}
+
+.card-container {
+    margin-top: 40px;
+}
+
+.btn-crear {
+    width: 200px;
+    height: 48px;
+    border-radius: 20px;
+    border-color: white;
+    background-color: #3D9BE9;
+    color: white;
+}
+
+#img-vector {
+    margin-bottom: 3px;
+}
+
+#search {
+    margin-top: 20px;
+    border-radius: 30px !important;
+    background-color: #D8D8D8 !important;
+}
+
+.lupa {
+    margin-top: 25px;
+    margin-left: 10px;
+}
+
+.eliminar-editar {
+    margin-bottom: 10px;
+}
+
+.card {
+    background-color: #DBDBDB !important;
+}
+
+p {
+    text-align: left;
+}
+
+#descripcionn {
+    text-align: justify !important;
+}
+
+
+footer {
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

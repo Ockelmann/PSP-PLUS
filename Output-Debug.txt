@@ -1,0 +1,153 @@
+﻿'PSP+.exe' (CoreCLR: DefaultDomain): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Private.CoreLib.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Users\albin\Desktop\Trabajo\PSP+\PSP+\PSP-Plus\bin\Release\net5.0\PSP+.dll'. Symbols loaded.
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Runtime.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Hosting.Abstractions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\netstandard.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Hosting.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Hosting.Abstractions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Configuration.Abstractions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.DependencyInjection.Abstractions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.DependencyInjection.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Logging.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Collections.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.ComponentModel.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.IO.FileSystem.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Hosting.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Configuration.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Configuration.EnvironmentVariables.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Primitives.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Threading.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Linq.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Server.Kestrel.Core.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Server.Kestrel.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Server.IIS.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Runtime.InteropServices.RuntimeInformation.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Server.IISIntegration.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Configuration.CommandLine.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Configuration.UserSecrets.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Mvc.Core.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.FileProviders.Abstractions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.FileProviders.Physical.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Memory.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Configuration.FileExtensions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Configuration.Binder.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Configuration.Json.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Runtime.InteropServices.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.IO.FileSystem.Watcher.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.ComponentModel.Primitives.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Collections.Concurrent.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.FileSystemGlobbing.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Threading.Overlapped.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\Microsoft.Win32.Primitives.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Text.Json.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Text.Encoding.Extensions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Numerics.Vectors.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Runtime.CompilerServices.Unsafe.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Options.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Logging.Abstractions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Logging.EventLog.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Logging.Configuration.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Options.ConfigurationExtensions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Logging.Console.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Logging.Debug.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Logging.EventSource.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Diagnostics.Tracing.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Diagnostics.DiagnosticSource.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Http.Abstractions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Http.Features.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Http.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Connections.Abstractions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Net.Primitives.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.HostFiltering.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.HttpOverrides.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Routing.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.ObjectPool.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Routing.Abstractions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.ObjectModel.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Mvc.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Authentication.Abstractions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Authentication.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Users\albin\Desktop\Trabajo\PSP+\PSP+\PSP-Plus\bin\Release\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Users\albin\Desktop\Trabajo\PSP+\PSP+\PSP-Plus\bin\Release\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Cors.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Runtime.Loader.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Mvc.Abstractions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Mvc.ApiExplorer.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Authentication.Core.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Security.Claims.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Authorization.Policy.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Authorization.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Mvc.Cors.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Mvc.DataAnnotations.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.DataProtection.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.DataProtection.Abstractions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Cryptography.Internal.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.WebEncoders.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Text.Encodings.Web.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Runtime.Intrinsics.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Users\albin\Desktop\Trabajo\PSP+\PSP+\PSP-Plus\bin\Release\net5.0\Swashbuckle.AspNetCore.Swagger.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Users\albin\Desktop\Trabajo\PSP+\PSP+\PSP-Plus\bin\Release\net5.0\Microsoft.OpenApi.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.Localization.Abstractions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Threading.ThreadPool.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Runtime.Extensions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Threading.Thread.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Console.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Threading.Tasks.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\System.Diagnostics.EventLog.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Collections.Specialized.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.ComponentModel.TypeConverter.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\Microsoft.Win32.Registry.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Xml.XDocument.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Private.Xml.Linq.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Private.Xml.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\System.IO.Pipelines.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Security.Cryptography.Algorithms.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Text.RegularExpressions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Reflection.Emit.ILGeneration.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Reflection.Emit.Lightweight.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Reflection.Primitives.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.HttpsPolicy.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Diagnostics.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Users\albin\Desktop\Trabajo\PSP+\PSP+\PSP-Plus\bin\Release\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Net.Http.Headers.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Private.Uri.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Users\albin\Desktop\Trabajo\PSP+\PSP+\PSP-Plus\bin\Release\net5.0\Microsoft.EntityFrameworkCore.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Mvc.ViewFeatures.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Metadata.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.ComponentModel.Annotations.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Linq.Expressions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'Anonymously Hosted DynamicMethods Assembly'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.StaticFiles.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.Extensions.FileProviders.Embedded.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Diagnostics.Abstractions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Net.Security.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Security.Cryptography.X509Certificates.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Security.Cryptography.Primitives.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Collections.NonGeneric.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Security.Cryptography.Encoding.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Security.Cryptography.Cng.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Security.Cryptography.Csp.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Net.Sockets.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Net.NameResolution.dll'. 
+Microsoft.Hosting.Lifetime: Information: Now listening on: https://localhost:5001
+Microsoft.Hosting.Lifetime: Information: Now listening on: http://localhost:5000
+Microsoft.Hosting.Lifetime: Information: Application started. Press Ctrl+C to shut down.
+Microsoft.Hosting.Lifetime: Information: Hosting environment: Development
+Microsoft.Hosting.Lifetime: Information: Content root path: C:\Users\albin\Desktop\Trabajo\PSP+\PSP+\PSP-Plus
+Exception thrown: 'System.IO.IOException' in System.Net.Security.dll
+Exception thrown: 'System.IO.IOException' in System.Net.Security.dll
+Exception thrown: 'System.IO.IOException' in System.Private.CoreLib.dll
+Exception thrown: 'System.IO.IOException' in System.Private.CoreLib.dll
+Exception thrown: 'System.IO.IOException' in System.Private.CoreLib.dll
+Exception thrown: 'System.IO.IOException' in System.Private.CoreLib.dll
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Security.Principal.Windows.dll'. 
+Exception thrown: 'System.Security.Authentication.AuthenticationException' in System.Net.Security.dll
+Exception thrown: 'System.Security.Authentication.AuthenticationException' in System.Private.CoreLib.dll
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Net.Http.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Net.WebSockets.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.9\Microsoft.AspNetCore.Http.Extensions.dll'. 
+'PSP+.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.9\System.Buffers.dll'. 
+The program '[16012] PSP+.exe' has exited with code -1 (0xffffffff).

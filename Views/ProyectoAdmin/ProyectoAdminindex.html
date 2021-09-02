@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSP+ | Proyectos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/ProyectoAdmin.css">
+    <link rel="stylesheet" href="../Navbar/nav.css">
+    <link rel="icon" type="image/png" href="../img/icon.png">
+</head>
+
+<body>
+    <header id="header">
+  
+    </header>
+    <div class="container">
+        
+
+        <h1 class="titulo">Proyectos</h1>
+        <div class="div" style="width: 80%;  text-align: center; margin-left: auto; margin-right: auto;">
+            <button type="button" class="btn-crear" id="new-proyecto" onclick="location.href='../ProyectoAdmin/ProyectoAdmin.html'">
+                <img id="img-vector" src="./img/Vector.svg" style="width: 18px;"> Crear Proyecto</button>
+
+                
+
+            <div class="input-group rounded" style="padding-left: 30%; padding-right: 30%; padding-bottom: 3%;">
+
+                <input id="search" type="search" class="form-control rounded" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon" style="font-size: 20px; padding-left: 5%; " />
+                <a onclick="searchCursos()" id="editar">
+                    <img class="lupa" src="./img/Lupa.svg" id="imgeditar" alt="" style=" width: 45px;">
+                </a>
+            </div>
+
+
+            <div id="relacion"  class="alert alert-secondary" role="alert" style="display: none;">
+                No se puede eliminar debido a una relacion!
+            </div>
+
+            <div class="alert alert-danger" id="alert" role="alert" style="display: none;">
+                No se encontraron resultados
+            </div>
+
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-light table-bordered" style="text-align: center;">
+                <thead class="table" style="background-color: #021329; color: white;">
+                    <th>Id</th>
+                    <th>Nombre Proyecto</th>
+                    <th>Cliente</th>
+                    <th>Fecha Inicio Real</th>
+                    <th>Fecha Inicio Esperada</th>
+                    <th>Fecha Final Real</th>
+                    <th>Fecha Final Esperada</th>
+                    <th>Dev</th>                    
+                    <th>Total de Horas</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                <tbody id="lista-proyectos" style="background-color: D8D8D8; color: #000;">
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <footer>
+        <img src="../img/LOGOPLUSTI 2.svg" id="" alt="" width="140px">
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../Navbar/accionnav.js"></script>
+    <script src="../sessiontime.js"></script>
+
+    <script src="./js/ProyectoAdmin.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

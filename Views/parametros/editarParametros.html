@@ -1,0 +1,66 @@
+<!--
+    Desarrollador: Rogelio Raúl Castañeda Flores
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSP+ | Editar Parametros</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/editarParametros.css">
+     <link rel="stylesheet" href="../Navbar/nav.css"> 
+    <link rel="icon" type="image/png" href="../img/icon.png">
+</head>
+<body>
+    <header id="header">
+  
+    </header>
+    
+    <div class="container">
+
+        <h1 class="titulo">Editar Parametros</h1>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default" style="background-color: #B5B5B5;">Inactividad:</span>
+            <input type="number" class="form-control" id="inactividad" aria-describedby="inputGroup-sizing-default" placeholder="Tiempo de inactividad (Minutos)" required>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default" style="background-color: #B5B5B5;">Correo:</span>
+            <input type="email" class="form-control" id="correo" aria-describedby="inputGroup-sizing-default" placeholder="Correo" required>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default" style="background-color: #B5B5B5;">Contraseña del correo:</span>
+            <input type="text" class="form-control" id="clave" aria-describedby="inputGroup-sizing-default" placeholder="Clave" required>
+        </div>
+        <div class="alert alert-danger" id="alert" role="alert" style="display: none;">
+            Todos los campos son necesarios!
+        </div>
+
+        <div style="width: 80%;  text-align: center; margin-left: auto; margin-right: auto;  padding-top: 25px;">
+            <button type="button" class="btn" id="agregar" onclick="validar();">Guardar</button>
+        </div>
+
+    </div>
+    <footer>
+        <img src="../img/LOGOPLUSTI 2.svg" id="" alt="" width="140px">
+    </footer>
+
+     <script src="../Navbar/accionnav.js"></script> 
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+     <script src="./js/editarParametros.js"></script>
+     <script src="../sessiontime.js"></script>
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+</html>
