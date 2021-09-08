@@ -16,5 +16,6 @@ namespace PSP_.Models.Solicitudes
         public DateTime FechaNacimiento { get; set; }
         public int IdEquipoDesarrollo { get; set; }
         public string NombreEquipo { get; set; }
+        public bool Estado { get; set; }
     }
 }

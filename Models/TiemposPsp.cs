@@ -8,6 +8,8 @@ namespace PSP_.Models
     public partial class TiemposPsp
     {
         public int IdTiempoPsp { get; set; }
+        public bool Cronometro { get; set; }
+        public DateTime FechaRealGrabacion { get; set; }
         public DateTime FechaHoraInicio { get; set; }
         public DateTime FechaHoraFinal { get; set; }
         public string Descripcion { get; set; }

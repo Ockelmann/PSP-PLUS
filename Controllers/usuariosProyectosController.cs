@@ -33,7 +33,7 @@ namespace PSP_.Controllers
                     db.SaveChanges();
                     return Ok("El usuario se añadio correctamente a un proyecto");
                 }
-                catch(Exception e)
+                catch(Exception)
                 {
                     var datos = new { esta="601" };
                     return Ok(datos);

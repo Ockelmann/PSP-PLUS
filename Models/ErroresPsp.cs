@@ -8,6 +8,8 @@ namespace PSP_.Models
     public partial class ErroresPsp
     {
         public int IdErrorPsp { get; set; }
+        public bool Cronometro { get; set; }
+        public DateTime FechaRealGrabacion { get; set; }
         public DateTime Fecha { get; set; }
         public string Descripcion { get; set; }
         public string Solucion { get; set; }

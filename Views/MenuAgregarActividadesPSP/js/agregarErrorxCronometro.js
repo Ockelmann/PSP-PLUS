@@ -237,6 +237,7 @@ async function agregarError() {
     mostrarSpinner();
 
     let direccion;
+    calcularTiempoDeCorrecion();
 
     // Armando la variable para tipo Date
 
@@ -300,12 +301,12 @@ async function agregarError() {
         }
     }
 
-    calcularTiempoDeCorrecion();
+    
 
     if (proyectosSelect.value == '0') {
-        direccion = `${URL_Global}/Errores?fecha=${fechaHoraInicio}&descripcion=${descripcionInput.value}&solucion=${solucionInput.value}&correlativo=${correlativoInput.value}&tipoError=${tipoErrorSelect.value}&introducido=${etapasIntroducidoSelect.value}&eliminado=${etapasEliminadoSelect.value}&fechaHoraInicio=${fechaHoraInicio}&fechaHoraFinal=${fechaHoraFinal}&tiempoCorrecion=${tiempoCorrecion}&lenguaje=${lenguajeInput.value}&idUsuario=${idUsuario}`;
+        direccion = `${URL_Global}/Errores?fecha=${fechaHoraInicio}&descripcion=${descripcionInput.value}&solucion=${solucionInput.value}&correlativo=${correlativoInput.value}&tipoError=${tipoErrorSelect.value}&introducido=${etapasIntroducidoSelect.value}&eliminado=${etapasEliminadoSelect.value}&fechaHoraInicio=${fechaHoraInicio}&fechaHoraFinal=${fechaHoraFinal}&tiempoCorrecion=${tiempoCorrecion}&lenguaje=${lenguajeInput.value}&idUsuario=${idUsuario}&cronometro=true`;
     } else {
-        direccion = `${URL_Global}/Errores?fecha=${fechaHoraInicio}&descripcion=${descripcionInput.value}&solucion=${solucionInput.value}&correlativo=${correlativoInput.value}&tipoError=${tipoErrorSelect.value}&introducido=${etapasIntroducidoSelect.value}&eliminado=${etapasEliminadoSelect.value}&fechaHoraInicio=${fechaHoraInicio}&fechaHoraFinal=${fechaHoraFinal}&tiempoCorrecion=${tiempoCorrecion}&lenguaje=${lenguajeInput.value}&idProyecto=${proyectosSelect.value}&idUsuario=${idUsuario}`;
+        direccion = `${URL_Global}/Errores?fecha=${fechaHoraInicio}&descripcion=${descripcionInput.value}&solucion=${solucionInput.value}&correlativo=${correlativoInput.value}&tipoError=${tipoErrorSelect.value}&introducido=${etapasIntroducidoSelect.value}&eliminado=${etapasEliminadoSelect.value}&fechaHoraInicio=${fechaHoraInicio}&fechaHoraFinal=${fechaHoraFinal}&tiempoCorrecion=${tiempoCorrecion}&lenguaje=${lenguajeInput.value}&idProyecto=${proyectosSelect.value}&idUsuario=${idUsuario}&cronometro=true`;
     }
 
     await fetch(direccion, {
@@ -323,14 +324,6 @@ async function agregarError() {
     alert('Agregado Exitosamente');
     window.location.href = (`../ActividadesPSP/MenuActividades.html`);
 }
-
-
-
-
-
-
-
-
 
 
 function calcularTiempoDeCorrecion(){

@@ -18,7 +18,7 @@ namespace PSP_.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+   // [Authorize]
     public class EquipoDesarrolloNombre : ControllerBase
     {
         [HttpGet]
@@ -43,7 +43,7 @@ namespace PSP_.Controllers
                     foreach (var item in usuario)
                     {
                         var equipo = db.EquipoDesarrollos.Find(item.IdEquipoDesarrollo);
-                        equipolist.Add(new DatosdeUsuario { IdUsuario = item.IdUsuario, Nombres = item.Nombres, Apellidos = item.Apellidos, Email = item.Email, Clave = item.Clave, FechaNacimiento = item.FechaNacimiento, IdEquipoDesarrollo = item.IdEquipoDesarrollo, NombreEquipo = equipo.Nombre, Rol = item.Rol });
+                        equipolist.Add(new DatosdeUsuario { IdUsuario = item.IdUsuario, Nombres = item.Nombres, Apellidos = item.Apellidos, Email = item.Email, Clave = item.Clave, FechaNacimiento = item.FechaNacimiento, IdEquipoDesarrollo = item.IdEquipoDesarrollo, NombreEquipo = equipo.Nombre, Rol = item.Rol, Estado = item.Estado});
                     }
                 }
                 else if(idUsuario != 0 && correo == null)
@@ -54,7 +54,7 @@ namespace PSP_.Controllers
                     foreach (var item in usuario)
                     {
                         var equipo = db.EquipoDesarrollos.Find(item.IdEquipoDesarrollo);
-                        equipolist.Add(new DatosdeUsuario { IdUsuario = item.IdUsuario, Nombres = item.Nombres, Apellidos = item.Apellidos, Email = item.Email, Clave = item.Clave, FechaNacimiento = item.FechaNacimiento, IdEquipoDesarrollo = item.IdEquipoDesarrollo, NombreEquipo = equipo.Nombre, Rol = item.Rol });
+                        equipolist.Add(new DatosdeUsuario { IdUsuario = item.IdUsuario, Nombres = item.Nombres, Apellidos = item.Apellidos, Email = item.Email, Clave = item.Clave, FechaNacimiento = item.FechaNacimiento, IdEquipoDesarrollo = item.IdEquipoDesarrollo, NombreEquipo = equipo.Nombre, Rol = item.Rol, Estado = item.Estado });
                     }
 
                 }else if(idUsuario == 0 && correo != null)
@@ -65,7 +65,7 @@ namespace PSP_.Controllers
                     foreach (var item in usuario)
                     {
                         var equipo = db.EquipoDesarrollos.Find(item.IdEquipoDesarrollo);
-                        equipolist.Add(new DatosdeUsuario { IdUsuario = item.IdUsuario, Nombres = item.Nombres, Apellidos = item.Apellidos, Email = item.Email, Clave = item.Clave, FechaNacimiento = item.FechaNacimiento, IdEquipoDesarrollo = item.IdEquipoDesarrollo, NombreEquipo = equipo.Nombre, Rol = item.Rol });
+                        equipolist.Add(new DatosdeUsuario { IdUsuario = item.IdUsuario, Nombres = item.Nombres, Apellidos = item.Apellidos, Email = item.Email, Clave = item.Clave, FechaNacimiento = item.FechaNacimiento, IdEquipoDesarrollo = item.IdEquipoDesarrollo, NombreEquipo = equipo.Nombre, Rol = item.Rol, Estado = item.Estado });
                     }
                 }
                 

@@ -54,6 +54,9 @@ window.onload = () => {
 
 function filtrarActividades() {
 
+    localStorage.setItem("FechaInicio",JSON.stringify(fechaInicioFiltrado.value));
+    localStorage.setItem("FechaFinal",JSON.stringify(fechaFinalFiltrado.value));
+
     eliminarActividades();
 
     if (proyectosSelect.value == '0') {
@@ -142,15 +145,40 @@ function selectProyecto(proyectos) {
 }
 
 async function cargarActividades() {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    if (dd < 10) {
+    dd = '0' + dd;
+    }
+
+    if (mm < 10) {
+    mm = '0' + mm;
+    }
+
+    today = yyyy + '-' + mm + '-' + dd;
+
+    if(JSON.parse(localStorage.getItem("FechaInicio")) != undefined && JSON.parse(localStorage.getItem("FechaFinal")) != undefined){
+        fechaInicioFiltrado.value = JSON.parse(localStorage.getItem("FechaInicio"));
+        fechaFinalFiltrado.value = JSON.parse(localStorage.getItem("FechaFinal"));
+    }else{
+        fechaInicioFiltrado.value = today;
+        fechaFinalFiltrado.value = today;
+    }
+
+ 
+
     mostrarSpinner();
+
+    
 
     let direccion;
 
-    if(fechaFinalFiltrado.value == ''){
-        direccion = `${URL_Global}/ActividadesPSP?idUsuario=${idUsuario}`;
-    }else{
-        direccion = `${URL_Global}/ActividadesPSP?idUsuario=${idUsuario}&fechaInicioFiltrado=${fechaInicioFiltrado.value}&fechaFinalFiltrado=${fechaFinalFiltrado.value} 23:59:59`;
-    }
+  
+    direccion = `${URL_Global}/ActividadesPSP?idUsuario=${idUsuario}&fechaInicioFiltrado=${fechaInicioFiltrado.value}&fechaFinalFiltrado=${fechaFinalFiltrado.value} 23:59:59`;
+    
     
     tituloProyecto.textContent = 'Tiempos PSP';
 
@@ -166,6 +194,7 @@ async function cargarActividades() {
 
 function imprimirActividades(actividades) {
 
+    
     if (actividades.actividades.length == 0 && actividades.errores.length == 0) {
         alerta.style.display = 'block';
     } else {
@@ -183,7 +212,7 @@ function imprimirActividades(actividades) {
     actividadesJuntas.forEach(actividad => { 
 
         if(actividad.correlativo){
-            const { correlativo, descripcion, fechaHoraInicio, fechaHoraFinal, idErrorPsp, tipoError } = actividad;
+            const { correlativo, descripcion, fechaHoraInicio, fechaHoraFinal, idErrorPsp, tipoError, cronometro } = actividad;
 
             var fechaInicioSplit = fechaHoraInicio.split("T");
             let fechaInicio = fechaInicioSplit[0];
@@ -195,39 +224,59 @@ function imprimirActividades(actividades) {
             var HoraFinalSplit = fechaFinalSplit[1].split(":00");
             let horaFinal = HoraFinalSplit[0];
 
-            if (horaInicio.indexOf(':') == -1) {
-                horaInicio = horaInicio + ':00';
-            };
-
-            if (horaFinal.indexOf(':') == -1) {
-                horaFinal = horaFinal + ':00';
-            };
 
             restarHoras(fechaHoraInicio, fechaHoraFinal);
 
-            actividadesForm.innerHTML += `
-            <div class="actividad">
-                <img src="./img/separadorActividadErrors.svg">
-                <div class="tituloActividad">
-                    <h3>${descripcion}</h3>
+            if(cronometro == false){
+                actividadesForm.innerHTML += `
+                <div class="actividad">
+                    <img src="./img/separadorActividadErrors.svg">
+                    <div class="tituloActividad">
+                        <h3>${descripcion}</h3>
+                    </div>
+                    <div class="acciones">
+                        <a onclick="eliminarError(${idErrorPsp})" ><img id="eliminar" src="./img/eliminars.svg"></a>
+                        <a href="../ErroresPSP/EditarError.html?error=${idErrorPsp}"><img id="editar" src="./img/editars.svg"></a>
+                        <a href="../ErroresPSP/VerError.html?error=${idErrorPsp}"><img id="ver" src="./img/vers.svg"></a>
+                    </div>
+                     <div class="fechaHora d-flex">
+                        <h5>${horaInicio}</h5>
+                        <h4>${fechaInicio}</h4>
+                        <h4>a</h4>
+                        <h5>${horaFinal}</h5>
+                        <h4>${fechaFinal}</h4>
+                    </div>  
+                    
                 </div>
-                <div class="acciones">
-                    <a onclick="eliminarError(${idErrorPsp})" ><img id="eliminar" src="./img/eliminars.svg"></a>
-                    <a href="../ErroresPSP/EditarError.html?error=${idErrorPsp}"><img id="editar" src="./img/editars.svg"></a>
-                    <a href="../ErroresPSP/VerError.html?error=${idErrorPsp}"><img id="ver" src="./img/vers.svg"></a>
+                `;
+    
+            }else{
+                actividadesForm.innerHTML += `
+                <div class="actividad">
+                    <img src="./img/cronorojo.svg">
+                    <div class="tituloActividad">
+                        <h3>${descripcion}</h3>
+                    </div>
+                    <div class="acciones">
+                        <a onclick="eliminarError(${idErrorPsp})" ><img id="eliminar" src="./img/eliminars.svg"></a>
+                        <a href="../ErroresPSP/EditarError.html?error=${idErrorPsp}"><img id="editar" src="./img/editars.svg"></a>
+                        <a href="../ErroresPSP/VerError.html?error=${idErrorPsp}"><img id="ver" src="./img/vers.svg"></a>
+                    </div>
+                     <div class="fechaHora d-flex">
+                        <h5>${horaInicio}</h5>
+                        <h4>${fechaInicio}</h4>
+                        <h4>a</h4>
+                        <h5>${horaFinal}</h5>
+                        <h4>${fechaFinal}</h4>
+                    </div>  
+                    
                 </div>
-                 <div class="fechaHora d-flex">
-                    <h5>${horaInicio}</h5>
-                    <h4>${fechaInicio}</h4>
-                    <h4>a</h4>
-                    <h5>${horaFinal}</h5>
-                    <h4>${fechaFinal}</h4>
-                </div>  
-                
-            </div>
-            `;
+                `;
+            }
 
+          
             if(fechaInicioFiltrado.value == '' || fechaInicioFiltrado.value > fechaInicioSplit[0]){
+                
                 fechaInicioFiltrado.value = fechaInicioSplit[0];
             }
             
@@ -235,7 +284,7 @@ function imprimirActividades(actividades) {
                 fechaFinalFiltrado.value = fechaFinalSplit[0];
             }
         }else{
-            const { idTiempoPsp, fechaHoraInicio, fechaHoraFinal, descripcion, idProyecto, idUsuario } = actividad;
+            const { idTiempoPsp, fechaHoraInicio, fechaHoraFinal, descripcion, idProyecto, idUsuario,cronometro } = actividad;
 
             var fechaInicioSplit = fechaHoraInicio.split("T");
             let fechaInicio = fechaInicioSplit[0];
@@ -256,28 +305,54 @@ function imprimirActividades(actividades) {
             };
     
             restarHoras(fechaHoraInicio, fechaHoraFinal);
+
+            if(cronometro == false){
+                actividadesForm.innerHTML += `
+                <div class="actividad">
+                    <img src="./img/separadorActividads.svg">
+                    <div class="tituloActividad">
+                        <h3>${descripcion}</h3>
+                    </div>
+                    <div class="acciones">
+                        <a onclick="eliminarActividad(${idTiempoPsp})" ><img id="eliminar" src="./img/eliminars.svg"></a>
+                        <a href="./EditarActividad.html?actividad=${idTiempoPsp}"><img id="editar" src="./img/editars.svg"></a>
+                        <a href="./VerActividad.html?actividad=${idTiempoPsp}"><img id="ver" src="./img/vers.svg"></a>
+                    </div>
+                    <div class="fechaHora d-flex">
+                        <h5>${horaInicio}</h5>
+                        <h4>${fechaInicio}</h4>
+                        <h4>a</h4>
+                        <h5>${horaFinal}</h5>
+                        <h4>${fechaFinal}</h4>
+                    </div>
+                    
+                </div>
+                `;
+            }else{
+                actividadesForm.innerHTML += `
+                <div class="actividad">
+                    <img src="./img/crono.svg">
+                    <div class="tituloActividad">
+                        <h3>${descripcion}</h3>
+                    </div>
+                    <div class="acciones">
+                        <a onclick="eliminarActividad(${idTiempoPsp})" ><img id="eliminar" src="./img/eliminars.svg"></a>
+                        <a href="./EditarActividad.html?actividad=${idTiempoPsp}"><img id="editar" src="./img/editars.svg"></a>
+                        <a href="./VerActividad.html?actividad=${idTiempoPsp}"><img id="ver" src="./img/vers.svg"></a>
+                    </div>
+                    <div class="fechaHora d-flex">
+                        <h5>${horaInicio}</h5>
+                        <h4>${fechaInicio}</h4>
+                        <h4>a</h4>
+                        <h5>${horaFinal}</h5>
+                        <h4>${fechaFinal}</h4>
+                    </div>
+                    
+                </div>
+                `;
+            }
     
-            actividadesForm.innerHTML += `
-            <div class="actividad">
-                <img src="./img/separadorActividads.svg">
-                <div class="tituloActividad">
-                    <h3>${descripcion}</h3>
-                </div>
-                <div class="acciones">
-                    <a onclick="eliminarActividad(${idTiempoPsp})" ><img id="eliminar" src="./img/eliminars.svg"></a>
-                    <a href="./EditarActividad.html?actividad=${idTiempoPsp}"><img id="editar" src="./img/editars.svg"></a>
-                    <a href="./VerActividad.html?actividad=${idTiempoPsp}"><img id="ver" src="./img/vers.svg"></a>
-                </div>
-                <div class="fechaHora d-flex">
-                    <h5>${horaInicio}</h5>
-                    <h4>${fechaInicio}</h4>
-                    <h4>a</h4>
-                    <h5>${horaFinal}</h5>
-                    <h4>${fechaFinal}</h4>
-                </div>
-                
-            </div>
-            `;
+           
     
             if(fechaInicioFiltrado.value == '' || fechaInicioFiltrado.value > fechaInicioSplit[0]){
                 fechaInicioFiltrado.value = fechaInicioSplit[0];
@@ -314,29 +389,6 @@ function restarHoras(horaInicio, horaFinal) {
 }
 
 async function eliminarActividad(idActividad) {
-    /*const confirmar = confirm('¿ Desea eliminar la actividad ?');
-
-    if (confirmar) {
-
-        const direccion = `${URL_Global}/ActividadesPSP?idTiempoPSP=${idActividad}`;
-
-        await fetch(direccion, {
-            method: 'DELETE',
-            headers: new Headers({
-                'Authorization': 'Bearer ' + stringJWT
-            })
-        })
-            .then(respuesta => respuesta)
-            .then(resultado => {
-            })
-
-        alert('Elimando Exitosamente');
-
-    }else{
-        return;
-    }
-
-    location.reload();*/
 
     try {
         const {isConfirmed} = await Swal.fire({
@@ -370,28 +422,6 @@ async function eliminarActividad(idActividad) {
 }
 
 async function eliminarError(idErrorPSP){
-
-    /*const confirmar = confirm('¿ Desea eliminar el error registrado ?');
-
-    if(confirmar){
-        const direccion = `${URL_Global}/Errores?idErrorPSP=${idErrorPSP}`;
-
-        await fetch(direccion, {
-            method: 'DELETE',
-            headers: new Headers({
-                'Authorization': 'Bearer ' + stringJWT
-            })
-        })
-            .then(respuesta => respuesta)
-            .then(resultado => {
-            })
-
-        alert('Elimando Exitosamente');
-    }else{
-        return;
-    }
-
-    location.reload();*/
 
     try {
         const {isConfirmed} = await Swal.fire({

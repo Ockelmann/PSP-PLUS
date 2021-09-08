@@ -96,7 +96,7 @@ namespace PSP_.Controllers
 
 
         [HttpPost]
-        public ActionResult Post(DateTime fechaHoraInicio, DateTime fechaHoraFinal, string descripcion, int? idProyecto, int idUsuario)
+        public ActionResult Post(DateTime fechaHoraInicio, DateTime fechaHoraFinal, string descripcion, int? idProyecto, int idUsuario, bool cronometro)
         {
             using (Models.DBPSPPLUSContext db = new Models.DBPSPPLUSContext())
             {
@@ -104,13 +104,20 @@ namespace PSP_.Controllers
 
                 actividad.FechaHoraInicio = fechaHoraInicio;
                 actividad.FechaHoraFinal = fechaHoraFinal;
+
+                actividad.FechaRealGrabacion = DateTime.Now;
                 actividad.Descripcion = descripcion;
                 if(idProyecto != null)
                 {
                     actividad.IdProyecto = idProyecto;
                 }
+              
+                
+
                 actividad.IdUsuario = idUsuario;
- 
+
+                actividad.Cronometro = cronometro;
+
                 db.TiemposPsps.Add(actividad);
                 db.SaveChanges();
 

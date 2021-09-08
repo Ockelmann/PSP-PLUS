@@ -4,6 +4,7 @@ const cardListElement = document.getElementById("lista-usuarios");
 const exitoso = document.querySelector('#guardado');
 const exitoso2 = document.querySelector('#editado');
 const exitoso3 = document.querySelector('#eliminado');
+const alertactualizar = document.querySelector('#actualizar');
 const alerta = document.querySelector('#alert');
 const alertarelacion = document.querySelector('#relacion');
 const inpuntsearch = document.querySelector('#search');
@@ -80,6 +81,7 @@ async function GetDatos() {
     })
         .then(respuesta => respuesta.json())
         .then(resultado => {
+           
             mostrarDatos(resultado);
         })
 }
@@ -87,11 +89,24 @@ async function GetDatos() {
 
 function mostrarDatos(datos) {
     document.getElementById("lista-usuarios").innerHTML = "";
+ 
 
     datos.forEach(usuario => {
         var fechaSplit = usuario.fechaNacimiento.split("T");
         var fecha = fechaSplit[0];
         let card = null;
+        var status;
+        var color;
+
+        if (usuario.estado == 1) {
+            status = "Activo";
+            color = "green";
+        } else {
+            status = "Inactivo";
+            color = "red";
+        }
+
+
         if(usuario.rol == "administrador"){
             card = `
             <tr>
@@ -101,7 +116,9 @@ function mostrarDatos(datos) {
               <td>${fecha}</td>
               <td>${usuario.nombreEquipo}</td>
               <td>${usuario.rol}</td>
+              <td style="color: ${color}">${status}</td>
               <td><button class="btn edit" id="detalle" data-id="${usuario.idUsuario}" style="background-color: #4F73CF; color:white;"> Editar </button></td>
+              <td><button class="btn estado" id="detalle" data-id="${usuario.idUsuario}" style="background-color: #09254F; color:white;" disabled> Habilitar/Deshabilitar </button></td>
               <td><button class="btn delete" id="detalle" data-id="${usuario.idUsuario}" style="background-color: #09254F; color:white;" disabled> Eliminar </button></td>  
               </tr>
                 
@@ -116,7 +133,9 @@ function mostrarDatos(datos) {
               <td>${fecha}</td>
               <td>${usuario.nombreEquipo}</td>
               <td>${usuario.rol}</td>
+              <td style="color: ${color}">${status}</td>
               <td><button class="btn edit" id="detalle" data-id="${usuario.idUsuario}" style="background-color: #4F73CF; color:white;"> Editar </button></td>
+              <td><button class="btn estado" id="detalle" data-id="${usuario.idUsuario}" style="background-color: #065698; color:white;"> Habilitar/Deshabilitar </button></td>
               <td><button class="btn delete" id="detalle" data-id="${usuario.idUsuario}" style="background-color: #09254F; color:white;"> Eliminar </button></td>
             </tr>
         `;
@@ -135,6 +154,12 @@ function mostrarDatos(datos) {
 
     for (var i = 0; i < elements2.length; i++) {
         elements2[i].addEventListener('click', eliminarUsuario);
+    }
+
+    var elements3 = document.getElementsByClassName("estado");
+
+    for (var i = 0; i < elements3.length; i++) {
+        elements3[i].addEventListener('click', actualizarEstado);
     }
 
 }
@@ -258,4 +283,32 @@ async function searchCursos() {
                 }
             })
     }
+}
+
+
+async function actualizarEstado(e){
+    const usuario = e.target.parentElement.parentElement;
+    const userid = usuario.querySelector('button').getAttribute('data-id');
+
+    const url = `https://localhost:5001/api/ActualizarEstadoUser?idUsuario=${userid}`;
+
+    await fetch(url, {
+        method: 'PUT',
+        headers: new Headers({
+            'Authorization': 'Bearer ' + stringJWT
+        })
+    })
+    .then(respuesta => respuesta)
+
+       
+
+
+        GetDatos();
+
+
+        alertactualizar.style.display = 'block';
+
+        setTimeout(() => {
+            alertactualizar.style.display = 'none';
+        }, 3000);
 }

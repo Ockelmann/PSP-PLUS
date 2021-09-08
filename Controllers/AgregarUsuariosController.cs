@@ -17,7 +17,7 @@ namespace PSP_.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-   [Authorize]
+  [Authorize]
     public class AgregarUsuariosController : ControllerBase
     {
         static string desKey = "m/ti5TXBWPOigPCSqBy0Kg==";

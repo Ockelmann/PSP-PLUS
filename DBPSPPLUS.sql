@@ -5,6 +5,7 @@ CREATE DATABASE DBPSPPLUS;
 GO
 USE DBPSPPLUS;
 GO
+
 CREATE TABLE Proyectos(
 	idProyecto			int  IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	nombre				varchar(100) NOT NULL,
@@ -39,6 +40,7 @@ CREATE TABLE Usuario(
 	fechaNacimiento		date NOT NULL,
 	rol					varchar(50) NOT NULL,
 	idEquipoDesarrollo	int NOT NULL,
+	estado              bit  DEFAULT (1) NOT NULL,
 	CONSTRAINT FK_USUARIO_EQUIPODESARROLLO FOREIGN KEY(idEquipoDesarrollo) 
 		REFERENCES EquipoDesarrollo(idEquipoDesarrollo)
 );
@@ -61,6 +63,8 @@ GO
 
 CREATE TABLE TiemposPSP(
 	idTiempoPSP			int  IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	cronometro           BIT DEFAULT 0 NOT NULL,
+	FechaRealGrabacion  datetime NOT NULL,
 	fechaHoraInicio		datetime NOT NULL,
 	fechaHoraFinal		datetime NOT NULL,
 	descripcion			varchar(MAX) NOT NULL,
@@ -74,6 +78,8 @@ CREATE TABLE TiemposPSP(
 GO
 CREATE TABLE ErroresPSP(
 	idErrorPSP			int  IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	cronometro           BIT DEFAULT 0 NOT NULL,
+	FechaRealGrabacion  datetime NOT NULL,
 	fecha				date NOT NULL,
 	descripcion			varchar(MAX) NOT NULL,
 	solucion			varchar(MAX) NOT NULL,
@@ -537,7 +543,7 @@ group by TpSp.descripcion, TpSp.fechaHoraInicio,TpSp.fechaHoraFinal,u.nombres,p.
 
 
 
-select * from TiemposPSP;
+select * from ErroresPSP;
 
 select * from EquipoDesarrollo
 select * from Recordatorios;

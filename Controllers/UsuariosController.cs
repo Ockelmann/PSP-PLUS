@@ -41,8 +41,17 @@ namespace PSP_.Controllers
 
                 if (DecryptPassword(usuario.Clave) == credentials.Clave)
                 {
-                    var token =  Authenticate(usuario);
-                    return Ok(token);
+                    if(usuario.Estado == true)
+                    {
+                        var token = Authenticate(usuario);
+                        return Ok(token);
+                    }
+                    else
+                    {
+                        var tokenEmpty = "";
+                        return Ok(tokenEmpty);
+                    }
+                    
                 }
                 else
                 {
@@ -62,8 +71,8 @@ namespace PSP_.Controllers
                     new Claim("rol", usuario.Rol.ToString()),
                     new Claim("email", usuario.Email.ToString()),
                     new Claim("nombre", usuario.Nombres.ToString()),
-                    new Claim("apellidos", usuario.Apellidos.ToString())
-
+                    new Claim("apellidos", usuario.Apellidos.ToString()),
+                    new Claim("estado", usuario.Estado.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)

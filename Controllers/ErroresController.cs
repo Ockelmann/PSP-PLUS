@@ -55,7 +55,7 @@ namespace PSP_.Controllers
 
         [HttpPost]
         public ActionResult Post(DateTime fecha, string descripcion, string solucion, int correlativo, string tipoError, string introducido, string eliminado,
-            DateTime fechaHoraInicio, DateTime fechaHoraFinal, decimal tiempoCorrecion, string lenguaje, int? idProyecto, int idUsuario)
+            DateTime fechaHoraInicio, DateTime fechaHoraFinal, decimal tiempoCorrecion, string lenguaje, int? idProyecto, int idUsuario, bool cronometro)
         {
             using (Models.DBPSPPLUSContext db = new Models.DBPSPPLUSContext())
             {
@@ -72,12 +72,13 @@ namespace PSP_.Controllers
                 error.FechaHoraFinal = fechaHoraFinal;
                 error.TiempoCorrecion = tiempoCorrecion;
                 error.LenguajeDesarrollo = lenguaje;
+                error.FechaRealGrabacion = DateTime.Now;
                 if (idProyecto != null)
                 {
                     error.IdProyecto = idProyecto;
                 }
                 error.IdUsuario = idUsuario;
-
+                error.Cronometro = cronometro;
                 db.ErroresPsps.Add(error);
                 db.SaveChanges();
 

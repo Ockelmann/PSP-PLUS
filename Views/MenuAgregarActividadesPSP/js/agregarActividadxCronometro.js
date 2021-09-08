@@ -210,9 +210,9 @@ async function agregarActividad() {
     
 
     if (proyectosSelect.value == '0') {
-        direccion = `${URL_Global}/ActividadesPSP?fechaHoraInicio=${fechaHoraInicio}&fechaHoraFinal=${fechaHoraFinal}&descripcion=${descripcionInput.value}&idUsuario=${idUsuario}`;
+         direccion = `${URL_Global}/ActividadesPSP?fechaHoraInicio=${fechaHoraInicio}&fechaHoraFinal=${fechaHoraFinal}&descripcion=${descripcionInput.value}&idUsuario=${idUsuario}&cronometro=true`;
     } else {
-        direccion = `${URL_Global}/ActividadesPSP?fechaHoraInicio=${fechaHoraInicio}&fechaHoraFinal=${fechaHoraFinal}&descripcion=${descripcionInput.value}&idProyecto=${proyectosSelect.value}&idUsuario=${idUsuario}`;
+        direccion = `${URL_Global}/ActividadesPSP?fechaHoraInicio=${fechaHoraInicio}&fechaHoraFinal=${fechaHoraFinal}&descripcion=${descripcionInput.value}&idProyecto=${proyectosSelect.value}&idUsuario=${idUsuario}&cronometro=true`;
     }
 
     await fetch(direccion, {
