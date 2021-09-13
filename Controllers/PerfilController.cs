@@ -31,7 +31,9 @@ namespace PSP_.Controllers
                              email = u.Email,
                              clave = u.Clave,
                              fechaNacimiento = u.FechaNacimiento,
-                             idEquipoDesarrollo = e.Nombre
+                             nombreEquipo = e.Nombre,        
+                             idEquipoDesarrollo = u.IdEquipoDesarrollo
+
                          }
 
                      ).Where(er => er.idusuario == idUsuario).Distinct().First();

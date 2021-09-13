@@ -18,7 +18,7 @@ namespace PSP_.Controllers
         {
             using (Models.DBPSPPLUSContext db = new Models.DBPSPPLUSContext())
             {
-
+               
 
                 if (idUsuario == null)
                 {
@@ -27,13 +27,16 @@ namespace PSP_.Controllers
                     db.ErroresPsps, u => u.IdProyecto, e => e.IdProyecto,
                     (u, e) => new
                     {
+                       
                         solucion = e.Solucion,
                         tipoError = e.TipoError,
                         introducido = e.Introducido,
                         eliminado = e.Eliminado,
                         fechaHoraInicio = e.FechaHoraInicio,
                         fechaHoraFinal = e.FechaHoraFinal,
-                        nombreProyecto = u.Nombre
+                        nombreProyecto = u.Nombre,
+                        nombreDesarrollador = usuario(e.IdUsuario),
+                        tiempoInvertido = e.TiempoCorrecion / 60
                     }
 
                 ).Where(errores => errores.tipoError == tipoerror).Distinct().ToList();
@@ -59,7 +62,9 @@ namespace PSP_.Controllers
                             eliminado = e.Eliminado,
                             fechaHoraInicio = e.FechaHoraInicio,
                             fechaHoraFinal = e.FechaHoraFinal,
-                            nombreProyecto = u.Nombre
+                            nombreProyecto = u.Nombre,
+                            nombreDesarrollador = usuario(e.IdUsuario),
+                            tiempoInvertido = e.TiempoCorrecion / 60
                         }
 
                     ).Where(errores => errores.tipoError == tipoerror && errores.idusuario == idUsuario).Distinct().ToList();
@@ -67,6 +72,17 @@ namespace PSP_.Controllers
 
                     return Ok(reporte);
                 }
+            }
+        }
+
+
+        public static string usuario(int? idusuario)
+        {
+            using (Models.DBPSPPLUSContext db = new Models.DBPSPPLUSContext())
+            {
+                var usuario = db.Usuarios.Find(idusuario);
+
+                return usuario.Nombres + " "+ usuario.Apellidos;
             }
         }
     }

@@ -8,6 +8,7 @@ const apellidosInput = document.querySelector('#apellidos');
 const correoInput = document.querySelector('#correo');
 const fechaInput = document.querySelector('#fecha');
 const equipoInput = document.querySelector('#equipo');
+let idEquipo;
 
 function parseJwt(token) {
     var base64Url = token.split('.')[1];
@@ -42,7 +43,7 @@ function mostrar() {
 
 function GetDatos() {
     
-    const url = `https://localhost:44368/api/Perfil?idUsuario=${jwt.sub}`;
+    const url = `https://localhost:5001/api/Perfil?idUsuario=${jwt.sub}`;
 
     fetch(url, {
         headers: new Headers({
@@ -70,13 +71,14 @@ function mostrarDatos(datos) {
         correoInput.value = datos.email;
         contra = datos.clave;
         fechaInput.value = fecha;
-        equipoInput.value = datos.idEquipoDesarrollo;
+        equipoInput.value = datos.nombreEquipo;
+        idEquipo = datos.idEquipoDesarrollo
 
 }
 
 
 
-function actualizar() {
+async function actualizar() {
 
     if (nombresInput.value === '' || apellidosInput.value === '' || correoInput.value === '' ||
     fechaInput.value === '' || equipoInput.value === '') {
@@ -98,9 +100,10 @@ function actualizar() {
         if (confirmar) {
            
             console.log("Actualizando..")
-            const urlActualizarUsuario = `https://localhost:44368/api/Perfil?idUsuario=${jwt.sub}&nombre=${nombresInput.value}&apellido=${apellidosInput.value}&email=${correoInput.value}&clave=${contra}&fechaNacimiento=${fechaInput.value}&idEquipo=${equipoInput.value}`;
+            console.log(equipoInput.value)
+            const urlActualizarUsuario = `https://localhost:5001/api/Perfil?idUsuario=${jwt.sub}&nombre=${nombresInput.value}&apellido=${apellidosInput.value}&email=${correoInput.value}&clave=${contra}&fechaNacimiento=${fechaInput.value}&idEquipo=${idEquipo}`;
 
-            fetch(urlActualizarUsuario, {
+            await fetch(urlActualizarUsuario, {
                 method: 'PUT',
                 headers: new Headers({
                     'Authorization': 'Bearer ' + stringJWT

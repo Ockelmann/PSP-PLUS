@@ -43,9 +43,14 @@ const array2 = [];
 
 var editar = 0;
 
-window.onload = () =>{
-    getEquipos();
-}
+
+    window.onload = () =>{
+        getEquipos();
+        $('#passstrength').className = 'ok';
+                $('#passstrength').html('Contraseña Segura!');
+                inputClave.style.borderBottom = "2px solid green";
+    }
+
 
 function parseJwt(token) {
     var base64Url = token.split('.')[1];

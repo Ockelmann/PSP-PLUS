@@ -92,6 +92,8 @@ function mostrarDatos(datos) {
               <td>${proyectos.fechaHoraInicio.split("T")[0]}</td>
               <td>${proyectos.fechaHoraFinal.split("T")[0]}</td>
               <td>${proyectos.nombreProyecto}</td>
+              <td>${proyectos.nombreDesarrollador}</td>
+              <td>${proyectos.tiempoInvertido}</td>
             </tr>
         `;
         cardListElement.innerHTML += card;
@@ -100,7 +102,7 @@ function mostrarDatos(datos) {
 }
 else
 {
-    cardListElement.innerHTML +=`<tr> <td colspan="7"> Sin Resultados en el error seleccionado </td> </tr>`;
+    cardListElement.innerHTML +=`<tr> <td colspan="9"> Sin Resultados en el error seleccionado </td> </tr>`;
 
 }
 

@@ -70,8 +70,15 @@ form.addEventListener('submit', signIn)
 
 async function recuperar(){
 
-    const url = `https://localhost:5001/api/RecuperarContraseña?correo=${inputEmail.value}`;
-debugger;
+    if(inputEmail.value == ""){
+        alerta.textContent = "Ingrese un Correo"
+            alerta.style.display = 'block';
+            setTimeout(() => {
+                alerta.style.display = 'none';
+            }, 3000);
+    }else{
+        const url = `https://localhost:5001/api/RecuperarContraseña?correo=${inputEmail.value}`;
+
     await fetch(url, {
         method: 'PUT',
         headers: new Headers({
@@ -79,5 +86,14 @@ debugger;
         })
     })
         .then(respuesta => respuesta)
+
+        alerta.textContent = "Se le ha enviado un correo"
+            alerta.style.display = 'block';
+            setTimeout(() => {
+                alerta.style.display = 'none';
+            }, 3000);
+    }
+
+    
     
 }

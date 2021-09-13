@@ -212,7 +212,9 @@ function imprimirActividades(actividades) {
     actividadesJuntas.forEach(actividad => { 
 
         if(actividad.correlativo){
-            const { correlativo, descripcion, fechaHoraInicio, fechaHoraFinal, idErrorPsp, tipoError, cronometro } = actividad;
+            const { correlativo, descripcion, fechaHoraInicio, fechaHoraFinal, idErrorPsp, tipoError, cronometro, fechaRealGrabacion } = actividad;
+
+           
 
             var fechaInicioSplit = fechaHoraInicio.split("T");
             let fechaInicio = fechaInicioSplit[0];
@@ -223,6 +225,12 @@ function imprimirActividades(actividades) {
             let fechaFinal = fechaFinalSplit[0];
             var HoraFinalSplit = fechaFinalSplit[1].split(":00");
             let horaFinal = HoraFinalSplit[0];
+
+            var fechaRealSplit = fechaRealGrabacion.split("T");
+            let fechaReal = fechaRealSplit[0];
+            var HoraRealSplit = fechaRealSplit[1].split(".");
+            let horaReal = HoraRealSplit[0];
+
 
 
             restarHoras(fechaHoraInicio, fechaHoraFinal);
@@ -245,6 +253,13 @@ function imprimirActividades(actividades) {
                         <h4>a</h4>
                         <h5>${horaFinal}</h5>
                         <h4>${fechaFinal}</h4>
+                    </div>  
+
+                    <div class="fechaHora d-flex">
+                        
+                        <h4>Fecha Real Grabacion:</h4>
+                        <h5>${fechaReal}</h5>
+                        <h4>${horaReal}</h4>
                     </div>  
                     
                 </div>
@@ -269,7 +284,12 @@ function imprimirActividades(actividades) {
                         <h5>${horaFinal}</h5>
                         <h4>${fechaFinal}</h4>
                     </div>  
-                    
+                    <div class="fechaHora d-flex">
+                        
+                    <h4>Fecha Real Grabacion:</h4>
+                    <h5>${fechaReal}</h5>
+                    <h4>${horaReal}</h4>
+                </div>  
                 </div>
                 `;
             }
@@ -284,7 +304,7 @@ function imprimirActividades(actividades) {
                 fechaFinalFiltrado.value = fechaFinalSplit[0];
             }
         }else{
-            const { idTiempoPsp, fechaHoraInicio, fechaHoraFinal, descripcion, idProyecto, idUsuario,cronometro } = actividad;
+            const { idTiempoPsp, fechaHoraInicio, fechaHoraFinal, descripcion, idProyecto, idUsuario,cronometro, fechaRealGrabacion } = actividad;
 
             var fechaInicioSplit = fechaHoraInicio.split("T");
             let fechaInicio = fechaInicioSplit[0];
@@ -295,6 +315,11 @@ function imprimirActividades(actividades) {
             let fechaFinal = fechaFinalSplit[0];
             var HoraFinalSplit = fechaFinalSplit[1].split(":00");
             let horaFinal = HoraFinalSplit[0];
+
+            var fechaRealSplit = fechaRealGrabacion.split("T");
+            let fechaReal = fechaRealSplit[0];
+            var HoraRealSplit = fechaRealSplit[1].split(".");
+            let horaReal = HoraRealSplit[0];
     
             if (horaInicio.indexOf(':') == -1) {
                 horaInicio = horaInicio + ':00';
@@ -325,7 +350,12 @@ function imprimirActividades(actividades) {
                         <h5>${horaFinal}</h5>
                         <h4>${fechaFinal}</h4>
                     </div>
-                    
+                    <div class="fechaHora d-flex">
+                        
+                        <h4>Fecha Real Grabacion:</h4>
+                        <h5>${fechaReal}</h5>
+                        <h4>${horaReal}</h4>
+                    </div>  
                 </div>
                 `;
             }else{
@@ -347,7 +377,12 @@ function imprimirActividades(actividades) {
                         <h5>${horaFinal}</h5>
                         <h4>${fechaFinal}</h4>
                     </div>
-                    
+                    <div class="fechaHora d-flex">
+                        
+                        <h4>Fecha Real Grabacion:</h4>
+                        <h5>${fechaReal}</h5>
+                        <h4>${horaReal}</h4>
+                    </div>  
                 </div>
                 `;
             }
@@ -403,7 +438,7 @@ async function eliminarActividad(idActividad) {
         if(!isConfirmed){
             return;
         }
-        const direccion = `${url}/api/ActividadesPSP?idTiempoPSP=${idActividad}`;
+        const direccion = `https://localhost:5001/api/ActividadesPSP?idTiempoPSP=${idActividad}`;
 
         await fetch(direccion, {
             method: 'DELETE',
@@ -413,6 +448,7 @@ async function eliminarActividad(idActividad) {
         })
             .then(respuesta => respuesta)
         Swal.fire('Actividad Eliminada!')
+        
         
     } catch (error) {
         Swal.fire("Problemas a elminiar actividad");
@@ -436,7 +472,7 @@ async function eliminarError(idErrorPSP){
         if(!isConfirmed){
             return;
         }
-        const direccion = `${url}/api/Errores?idErrorPSP=${idErrorPSP}`;
+        const direccion = `https://localhost:5001/api/Errores?idErrorPSP=${idErrorPSP}`;
 
         await fetch(direccion, {
             method: 'DELETE',
@@ -446,7 +482,7 @@ async function eliminarError(idErrorPSP){
         })
             .then(respuesta => respuesta)
         Swal.fire('Error Eliminado!')
-        cargarActividades();
+        
         
     } catch (error) {
         Swal.fire("Problemas a elminiar error.");
