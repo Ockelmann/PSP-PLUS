@@ -303,20 +303,45 @@ async function agregarError() {
 
     
 
-    if (proyectosSelect.value == '0') {
+   /* if (proyectosSelect.value == '0') {
         direccion = `${URL_Global}/Errores?fecha=${fechaHoraInicio}&descripcion=${descripcionInput.value}&solucion=${solucionInput.value}&correlativo=${correlativoInput.value}&tipoError=${tipoErrorSelect.value}&introducido=${etapasIntroducidoSelect.value}&eliminado=${etapasEliminadoSelect.value}&fechaHoraInicio=${fechaHoraInicio}&fechaHoraFinal=${fechaHoraFinal}&tiempoCorrecion=${tiempoCorrecion}&lenguaje=${lenguajeInput.value}&idUsuario=${idUsuario}&cronometro=true`;
     } else {
         direccion = `${URL_Global}/Errores?fecha=${fechaHoraInicio}&descripcion=${descripcionInput.value}&solucion=${solucionInput.value}&correlativo=${correlativoInput.value}&tipoError=${tipoErrorSelect.value}&introducido=${etapasIntroducidoSelect.value}&eliminado=${etapasEliminadoSelect.value}&fechaHoraInicio=${fechaHoraInicio}&fechaHoraFinal=${fechaHoraFinal}&tiempoCorrecion=${tiempoCorrecion}&lenguaje=${lenguajeInput.value}&idProyecto=${proyectosSelect.value}&idUsuario=${idUsuario}&cronometro=true`;
+    }*/
+
+    const url = `${URL_Global}/Errores`;
+
+    var  datos  = { 
+        fecha: fechaHoraInicio,
+        descripcion: descripcionInput.value,
+        solucion: solucionInput.value,
+        correlativo: correlativoInput.value,
+        tipoError: tipoErrorSelect.value,
+        introducido: etapasIntroducidoSelect.value,
+        eliminado: etapasEliminadoSelect.value,
+        fechaHoraInicio: fechaHoraInicio,
+        fechaHoraFinal: fechaHoraFinal,
+        tiempoCorrecion: tiempoCorrecion,
+        lenguajeDesarrollo: lenguajeInput.value,
+        idProyecto: proyectosSelect.value,
+        idUsuario: idUsuario,
+        cronometro: true,
     }
 
-    await fetch(direccion, {
+
+    await fetch(url, {
         method: 'POST',
         headers: new Headers({
+            'Accept' : "application/json",
+            "Content-Type": "application/json",
             'Authorization': 'Bearer ' + stringJWT
-        })
+        }),
+        body: JSON.stringify(datos),
     })
-        .then(respuesta => respuesta)
-        .then(resultado => {
+        .then((res)=>{
+            console.log("bien" + res);
+        }).catch((err)=>{
+            console.log("mal"+ err);
         })
 
         localStorage.removeItem('fechaHoraInicioErrorxCronometro');

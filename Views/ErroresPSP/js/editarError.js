@@ -184,22 +184,43 @@ async function editarErrorPSP(){
 
     mostrarSpinner();
 
-    let direccion;
+    const url = `${URL_Global}/Errores`;
 
-    if (proyectosSelect.value == '0') {
+    var  datos  = { 
+        idErrorPsp: idErrorPSP,
+        fecha: fechaHoraInicioInput.value,
+        descripcion: descripcionInput.value,
+        solucion: solucionInput.value,
+        correlativo: correlativoInput.value,
+        tipoError: tipoErrorSelect.value,
+        introducido: etapasIntroducidoSelect.value,
+        eliminado: etapasEliminadoSelect.value,
+        fechaHoraInicio: fechaHoraInicioInput.value,
+        fechaHoraFinal: fechaHoraFinalInput.value,
+        tiempoCorrecion: tiempoCorrecion,
+        lenguajeDesarrollo: lenguajeInput.value,
+        idProyecto: proyectosSelect.value,
+    }
+
+   /* if (proyectosSelect.value == '0') {
         direccion = `${URL_Global}/Errores?idErrorPSP=${idErrorPSP}&fecha=${fechaHoraInicioInput.value}&descripcion=${descripcionInput.value}&solucion=${solucionInput.value}&correlativo=${correlativoInput.value}&tipoError=${tipoErrorSelect.value}&introducido=${etapasIntroducidoSelect.value}&eliminado=${etapasEliminadoSelect.value}&fechaHoraInicio=${fechaHoraInicioInput.value}&fechaHoraFinal=${fechaHoraFinalInput.value}&tiempoCorrecion=${tiempoCorrecion}&lenguaje=${lenguajeInput.value}`;
     } else {
         direccion = `${URL_Global}/Errores?idErrorPSP=${idErrorPSP}&fecha=${fechaHoraInicioInput.value}&descripcion=${descripcionInput.value}&solucion=${solucionInput.value}&correlativo=${correlativoInput.value}&tipoError=${tipoErrorSelect.value}&introducido=${etapasIntroducidoSelect.value}&eliminado=${etapasEliminadoSelect.value}&fechaHoraInicio=${fechaHoraInicioInput.value}&fechaHoraFinal=${fechaHoraFinalInput.value}&tiempoCorrecion=${tiempoCorrecion}&lenguaje=${lenguajeInput.value}&idProyecto=${proyectosSelect.value}`;
-    }
+    }*/
 
-    await fetch(direccion, {
+    await fetch(url, {
         method: 'PUT',
         headers: new Headers({
+            'Accept' : "application/json",
+            "Content-Type": "application/json",
             'Authorization': 'Bearer ' + stringJWT
-        })
+        }),
+        body: JSON.stringify(datos),
     })
-        .then(respuesta => respuesta)
-        .then(resultado => {
+        .then((res)=>{
+            console.log("bien" + res);
+        }).catch((err)=>{
+            console.log("mal"+ err);
         })
 
     window.location.href = (`../ActividadesPSP/MenuActividades.html`);

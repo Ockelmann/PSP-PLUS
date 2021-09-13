@@ -54,31 +54,30 @@ namespace PSP_.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post(DateTime fecha, string descripcion, string solucion, int correlativo, string tipoError, string introducido, string eliminado,
-            DateTime fechaHoraInicio, DateTime fechaHoraFinal, decimal tiempoCorrecion, string lenguaje, int? idProyecto, int idUsuario, bool cronometro)
+        public ActionResult Post([FromBody] Models.ErroresPsp modelo)
         {
             using (Models.DBPSPPLUSContext db = new Models.DBPSPPLUSContext())
             {
                 Models.ErroresPsp error = new Models.ErroresPsp();
 
-                error.Fecha = fecha;
-                error.Descripcion = descripcion;
-                error.Solucion = solucion;
-                error.Correlativo = correlativo;
-                error.TipoError = tipoError;
-                error.Introducido = introducido;
-                error.Eliminado = eliminado;
-                error.FechaHoraInicio = fechaHoraInicio;
-                error.FechaHoraFinal = fechaHoraFinal;
-                error.TiempoCorrecion = tiempoCorrecion;
-                error.LenguajeDesarrollo = lenguaje;
+                error.Fecha = modelo.Fecha;
+                error.Descripcion = modelo.Descripcion;
+                error.Solucion = modelo.Solucion;
+                error.Correlativo = modelo.Correlativo;
+                error.TipoError = modelo.TipoError;
+                error.Introducido = modelo.Introducido;
+                error.Eliminado = modelo.Eliminado;
+                error.FechaHoraInicio = modelo.FechaHoraInicio;
+                error.FechaHoraFinal = modelo.FechaHoraFinal;
+                error.TiempoCorrecion = modelo.TiempoCorrecion;
+                error.LenguajeDesarrollo = modelo.LenguajeDesarrollo;
                 error.FechaRealGrabacion = DateTime.Now;
-                if (idProyecto != null)
+                if (modelo.IdProyecto != null)
                 {
-                    error.IdProyecto = idProyecto;
+                    error.IdProyecto = modelo.IdProyecto;
                 }
-                error.IdUsuario = idUsuario;
-                error.Cronometro = cronometro;
+                error.IdUsuario = modelo.IdUsuario;
+                error.Cronometro = modelo.Cronometro;
                 db.ErroresPsps.Add(error);
                 db.SaveChanges();
 
@@ -109,27 +108,26 @@ namespace PSP_.Controllers
         }
 
         [HttpPut]
-        public ActionResult Put(int idErrorPSP, DateTime fecha, string descripcion, string solucion, int correlativo, string tipoError, string introducido, string eliminado,
-            DateTime fechaHoraInicio, DateTime fechaHoraFinal, decimal tiempoCorrecion, string lenguaje, int? idProyecto)
+        public ActionResult Put([FromBody] Models.ErroresPsp modelo)
         {
             using (Models.DBPSPPLUSContext db = new Models.DBPSPPLUSContext())
             {
-                Models.ErroresPsp datos = db.ErroresPsps.Find(idErrorPSP);
+                Models.ErroresPsp datos = db.ErroresPsps.Find(modelo.IdErrorPsp);
 
-                datos.Fecha = fecha;
-                datos.Descripcion = descripcion;
-                datos.Solucion = solucion;
-                datos.Correlativo = correlativo;
-                datos.TipoError = tipoError;
-                datos.Introducido = introducido;
-                datos.Eliminado = eliminado;
-                datos.FechaHoraInicio = fechaHoraInicio;
-                datos.FechaHoraFinal = fechaHoraFinal;
-                datos.TiempoCorrecion = tiempoCorrecion;
-                datos.LenguajeDesarrollo = lenguaje;
-                if (idProyecto != null)
+                datos.Fecha = modelo.Fecha;
+                datos.Descripcion = modelo.Descripcion;
+                datos.Solucion = modelo.Solucion;
+                datos.Correlativo = modelo.Correlativo;
+                datos.TipoError = modelo.TipoError;
+                datos.Introducido = modelo.Introducido;
+                datos.Eliminado = modelo.Eliminado;
+                datos.FechaHoraInicio = modelo.FechaHoraInicio;
+                datos.FechaHoraFinal = modelo.FechaHoraFinal;
+                datos.TiempoCorrecion = modelo.TiempoCorrecion;
+                datos.LenguajeDesarrollo = modelo.LenguajeDesarrollo;
+                if (modelo.IdProyecto != null)
                 {
-                    datos.IdProyecto = idProyecto;
+                    datos.IdProyecto = modelo.IdProyecto;
                 }
                 else
                 {
