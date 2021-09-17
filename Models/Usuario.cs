@@ -24,6 +24,7 @@ namespace PSP_.Models
         public string Rol { get; set; }
         public int IdEquipoDesarrollo { get; set; }
         public bool Estado { get; set; }
+        public bool RecuperaContraseña { get; set; }
 
         public virtual EquipoDesarrollo IdEquipoDesarrolloNavigation { get; set; }
         public virtual ICollection<ErroresPsp> ErroresPsps { get; set; }

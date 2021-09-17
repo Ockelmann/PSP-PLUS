@@ -55,9 +55,22 @@ const signIn = async (e) => {
             e.preventDefault()
         } else {
             if (jwt.rol == "administrador") {
-                window.location.href = "../MenuPrincipa-Admin/index.html";
+             
+                
+                if(jwt.recuperar == "True"){
+                    window.location.href = "./RecuperarContraseña.html";
+                }else{
+                    window.location.href = "../MenuPrincipa-Admin/index.html";
+                }
+               
             } else if (jwt.rol == "desarrollador") {
-                window.location.href = "../MenuPrincipal/Menu.html";
+                
+                if(jwt.recuperar== "True"){
+                    window.location.href = "./RecuperarContraseña.html";
+                }else{
+                    window.location.href = "../MenuPrincipa-Admin/index.html";
+                }
+       
             }
         }
     } catch (err) {

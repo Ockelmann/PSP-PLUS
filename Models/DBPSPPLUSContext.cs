@@ -42,7 +42,7 @@ namespace PSP_.Models
             modelBuilder.Entity<EquipoDesarrollo>(entity =>
             {
                 entity.HasKey(e => e.IdEquipoDesarrollo)
-                    .HasName("PK__EquipoDe__C302843858432F43");
+                    .HasName("PK__EquipoDe__C3028438B612E927");
 
                 entity.ToTable("EquipoDesarrollo");
 
@@ -64,7 +64,7 @@ namespace PSP_.Models
             modelBuilder.Entity<ErroresPsp>(entity =>
             {
                 entity.HasKey(e => e.IdErrorPsp)
-                    .HasName("PK__ErroresP__9CDF13FAC3A0CA19");
+                    .HasName("PK__ErroresP__9CDF13FADBB031B4");
 
                 entity.ToTable("ErroresPSP");
 
@@ -145,7 +145,7 @@ namespace PSP_.Models
             modelBuilder.Entity<Parametro>(entity =>
             {
                 entity.HasKey(e => e.IdParametro)
-                    .HasName("PK__Parametr__9C816E5F65961015");
+                    .HasName("PK__Parametr__9C816E5FD1A2843F");
 
                 entity.Property(e => e.IdParametro).HasColumnName("idParametro");
 
@@ -165,7 +165,7 @@ namespace PSP_.Models
             modelBuilder.Entity<Proyecto>(entity =>
             {
                 entity.HasKey(e => e.IdProyecto)
-                    .HasName("PK__Proyecto__D0AF4CB4538A154B");
+                    .HasName("PK__Proyecto__D0AF4CB453ABCE88");
 
                 entity.Property(e => e.IdProyecto).HasColumnName("idProyecto");
 
@@ -217,7 +217,7 @@ namespace PSP_.Models
             modelBuilder.Entity<Recordatorio>(entity =>
             {
                 entity.HasKey(e => e.IdRecordatorios)
-                    .HasName("PK__Recordat__3EC6A121FA6883BB");
+                    .HasName("PK__Recordat__3EC6A1217D91126C");
 
                 entity.Property(e => e.IdRecordatorios).HasColumnName("idRecordatorios");
 
@@ -260,7 +260,7 @@ namespace PSP_.Models
             modelBuilder.Entity<TiemposPsp>(entity =>
             {
                 entity.HasKey(e => e.IdTiempoPsp)
-                    .HasName("PK__TiemposP__08E1CCE5914BD440");
+                    .HasName("PK__TiemposP__08E1CCE536053972");
 
                 entity.ToTable("TiemposPSP");
 
@@ -302,7 +302,7 @@ namespace PSP_.Models
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__Usuario__645723A67BBCE46E");
+                    .HasName("PK__Usuario__645723A60AAB8444");
 
                 entity.ToTable("Usuario");
 
@@ -359,7 +359,7 @@ namespace PSP_.Models
             modelBuilder.Entity<UsuarioProyecto>(entity =>
             {
                 entity.HasKey(e => new { e.IdUsuario, e.IdProyecto })
-                    .HasName("PK__UsuarioP__395DD76D8A93CBAA");
+                    .HasName("PK__UsuarioP__395DD76DE28D64C7");
 
                 entity.ToTable("UsuarioProyecto");
 

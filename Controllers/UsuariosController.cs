@@ -72,7 +72,9 @@ namespace PSP_.Controllers
                     new Claim("email", usuario.Email.ToString()),
                     new Claim("nombre", usuario.Nombres.ToString()),
                     new Claim("apellidos", usuario.Apellidos.ToString()),
-                    new Claim("estado", usuario.Estado.ToString())
+                    new Claim("estado", usuario.Estado.ToString()),
+                    new Claim("recuperar", usuario.RecuperaContraseña.ToString()),
+
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)

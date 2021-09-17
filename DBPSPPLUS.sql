@@ -41,6 +41,7 @@ CREATE TABLE Usuario(
 	rol					varchar(50) NOT NULL,
 	idEquipoDesarrollo	int NOT NULL,
 	estado              bit  DEFAULT (1) NOT NULL,
+	RecuperaContraseña bit DEFAULT (0) NOT NULL,
 	CONSTRAINT FK_USUARIO_EQUIPODESARROLLO FOREIGN KEY(idEquipoDesarrollo) 
 		REFERENCES EquipoDesarrollo(idEquipoDesarrollo)
 );
@@ -134,7 +135,7 @@ CREATE TABLE Parametros(
 );
 GO
 
-INSERT INTO Parametros(inactividad, correo, clave) VALUES (5, 'pspplusti@gmail.com', '12345');
+INSERT INTO Parametros(inactividad, correo, clave) VALUES (5, 'pspplusti@gmail.com', 'pspplusti1914');
 GO
 ----- Erick Echeverria/Debora Chacach 12/08/2021
 -- ############################################################################################

@@ -83,6 +83,7 @@ namespace PSP_.Controllers
 
 
                     datos.Clave = EncryptPassword(contraseniaAleatoria);
+                    datos.RecuperaContraseña = true;
                     db.Entry(datos).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                     db.SaveChanges();
 
