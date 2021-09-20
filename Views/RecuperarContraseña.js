@@ -7,7 +7,7 @@ const form = document.getElementById('signin-form');
 
 
 
-/*$('#inputPassword').keyup(function(e) {
+$('#inputPassword').keyup(function(e) {
    
     var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
     var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
@@ -29,7 +29,7 @@ const form = document.getElementById('signin-form');
             inputClave.style.borderBottom = "2px solid orange";
     }
     return true;
-});*/
+});
 
 
 function parseJwt(token) {

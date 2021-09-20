@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     else if ((jwt.rol = "desarrollador")) {
 
-        if(JSON.parse(localStorage.getItem("fechaHoraInicioActividadxCronometro")) != undefined || JSON.parse(localStorage.getItem("fechaHoraInicioErrorxCronometro")) != undefined ){
+        if(JSON.parse(localStorage.getItem("fechaHoraInicioActividadxCronometro")) != undefined){
             document.querySelector("#header").innerHTML = `
             <nav class="navbar navbar-expand-sm   ">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones" style="margin-left: 10px">
@@ -101,7 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             </div>
             <div>
-            <img  src="../Navbar/crono.svg" alt="">
+            
+            <a  href="../MenuAgregarActividadesPSP/AgregarActividadxCronometro.html"><img  src="../Navbar/crono.svg" alt=""></a>
            </div>
             <div >
             
@@ -116,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
           </nav>
           `
-        }else{
+        }else if(JSON.parse(localStorage.getItem("fechaHoraInicioErrorxCronometro")) != undefined ){
 
           document.querySelector("#header").innerHTML = `
             <nav class="navbar navbar-expand-sm   ">
@@ -152,8 +153,11 @@ document.addEventListener('DOMContentLoaded', () => {
             
             </div>
 
-          
-
+            <div>
+            
+            <a  href="../MenuAgregarActividadesPSP/AgregarErrorxCronometro.html"><img  src="../Navbar/crono.svg" alt=""></a>
+           </div>
+            
             <div >
             <a class="nav-link nombre-nav" style="text-decoration: none;" href="../Perfil/Perfil.html">${jwt.nombre} ${jwt.apellidos}</a>
             </div>
@@ -166,6 +170,52 @@ document.addEventListener('DOMContentLoaded', () => {
           </nav>
           `
 
+        }else{
+          document.querySelector("#header").innerHTML = `
+          <nav class="navbar navbar-expand-sm   ">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones" style="margin-left: 10px">
+          <img src="../Navbar/menu.png"class="navh">
+          </button>
+          
+          <!-- logo -->
+          <a class="navbar-brand" href="#">
+            <img style="width: 100px;" src="../Navbar/LOGOPLUSTI 2.png" width="75" height="30" alt="">
+          </a>
+          
+          <!-- enlaces -->
+          <div class="collapse navbar-collapse" id="opciones">   
+            <ul class="navbar-nav">
+              
+              <li class="nav-item">
+                <a class="nav-link" href="../MenuPrincipal/Menu.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../ActividadesPSP/MenuActividades.html">Actividades</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../ProyectoDesarrollador/ProyectoDesarrolladorindex.html">Proyectos</a>
+              </li>  
+              <li class="nav-item">
+                <a class="nav-link" href="../Recordatorios/Recordatorios.html">Recordatorios</a>
+              </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../MenuReportes/Reporteria.html">Reportes</a>
+              </li>  
+            </ul>
+          
+          </div>
+          
+          <div >
+          <a class="nav-link nombre-nav" style="text-decoration: none;" href="../Perfil/Perfil.html">${jwt.nombre} ${jwt.apellidos}</a>
+          </div>
+          <div >
+          
+          <a href="../Login.html" onclick="CerrarSesion();" class="nav-link"><img src="../Navbar/Vector.png"></a>
+          
+          </div>
+          
+        </nav>
+        `
         }
 
 
