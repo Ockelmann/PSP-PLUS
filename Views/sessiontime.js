@@ -3,23 +3,31 @@ var time;
 let restante=200000;
 
 document.addEventListener('DOMContentLoaded', () => {
-    const url = `https://localhost:5001/api/Parametros`;
 
-    fetch(url, {
-         headers: new Headers({
-             'Authorization': 'Bearer ' + Cookies.get('jwt')
-         })
-     })
-         .then(respuesta => respuesta.json())
-         .then(resultado => {
-             
-            const { inactividad } = resultado;
-            restante=inactividad;
-            restante= restante*60*1000;//calculo de tiempo que tiene de session out
+    if((JSON.parse(localStorage.getItem("fechaHoraInicioActividadxCronometro")) != undefined) || JSON.parse(localStorage.getItem("fechaHoraInicioErrorxCronometro")) != undefined ){
+        console.log("Cronometro corriendo")
+    }else{
+        const url = `https://localhost:5001/api/Parametros`;
 
-           
+        fetch(url, {
+             headers: new Headers({
+                 'Authorization': 'Bearer ' + Cookies.get('jwt')
+             })
          })
-    inactivityTime()
+             .then(respuesta => respuesta.json())
+             .then(resultado => {
+                 
+                const { inactividad } = resultado;
+                restante=inactividad;
+                restante= restante*60*1000;//calculo de tiempo que tiene de session out
+    
+               
+             })
+
+             inactivityTime();
+    
+            }
+               
 });
 
 var inactivityTime = function () {
@@ -33,20 +41,23 @@ document.onclick = resetTimer;     // touchpad clicks
 document.onscroll = resetTimer;    // scrolling with arrow keys
 document.onkeypress = resetTimer;
 
-    function logout() {
-        alert("Su sesion ha finalizado , por inactivdad ")
-        Cookies.remove("jwt");
-      location.reload();
-    }
+function logout() {
+    alert("Su sesion ha finalizado , por inactivdad ")
+    Cookies.remove("jwt");
+  location.reload();
+}
 
-    function resetTimer() {
+function resetTimer() {
 
-        
-            clearTimeout(time);
-            time = setTimeout(logout, restante)
-        
-        
-    }
+    
+        clearTimeout(time);
+        time = setTimeout(logout, restante)
+    
+    
+}
+
+
+    
 };
 
 

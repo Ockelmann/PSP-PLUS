@@ -195,31 +195,36 @@ async function GetDatos() {
 
 function mostrarDatos(datos) {
     document.getElementById("lista-errores").innerHTML = "";
-
-    datos.forEach(error => {
-        var fechaInicioSplit = error.fechaHoraInicio.split("T");
-        var fechaInicio = fechaInicioSplit[0];
-        var horaInicio = fechaInicioSplit[1];
-
-        var fechaFinSplit = error.fechaHoraInicio.split("T");
-        var fechaFin = fechaFinSplit[0];
-        var horaFin = fechaFinSplit[1];
-
-        var tiempoHoras = (error.tiempoCorrecion / 60).toFixed(2);;
-
-        const card = `
-            <tr>
-              <td>${error.correlativo}</td>
-              <td>${error.descripcion}</td>
-              <td>${error.solucion}</td>
-              <td>${fechaInicio} ${horaInicio}</td>
-              <td>${fechaFin} ${horaFin}</td>
-              <td>${error.tipoError}</td>
-              <td>${error.introducido}</td>
-              <td>${error.eliminado}</td>
-              <td>${tiempoHoras}</td>
-            </tr>
-        `;
-        cardListElement.innerHTML += card;
-    })
+    if(datos.length>0)
+    {
+        datos.forEach(error => {
+            var fechaInicioSplit = error.fechaHoraInicio.split("T");
+            var fechaInicio = fechaInicioSplit[0];
+            var horaInicio = fechaInicioSplit[1];
+    
+            var fechaFinSplit = error.fechaHoraInicio.split("T");
+            var fechaFin = fechaFinSplit[0];
+            var horaFin = fechaFinSplit[1];
+    
+            var tiempoHoras = (error.tiempoCorrecion / 60).toFixed(2);;
+    
+            const card = `
+                <tr>
+                  <td>${error.correlativo}</td>
+                  <td>${error.descripcion}</td>
+                  <td>${error.solucion}</td>
+                  <td>${fechaInicio} ${horaInicio}</td>
+                  <td>${fechaFin} ${horaFin}</td>
+                  <td>${error.tipoError}</td>
+                  <td>${error.introducido}</td>
+                  <td>${error.eliminado}</td>
+                  <td>${tiempoHoras}</td>
+                </tr>
+            `;
+            cardListElement.innerHTML += card;
+        })
+    }else{
+        cardListElement.innerHTML +=`<tr> <td colspan="9"> Sin Resultados entre las fechas seleccionadas </td> </tr>`;
+    }
+  
 }
