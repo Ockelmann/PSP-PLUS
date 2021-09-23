@@ -163,7 +163,12 @@ function mostrar(reporte) {
   if(reporte.length>0)
   {
     reporte.forEach(re => {
-        const {proyecto,inicio,fin,tiempo,tareas} = re
+        let {proyecto,inicio,fin,tiempo,tareas} = re
+
+        if(proyecto == "no asignado"){
+            proyecto = "Sin Proyecto"
+        }
+
         lista.innerHTML +=`<tr> <td>${proyecto}</td> <td>${inicio.split('T')[0]}</td> <td>${fin.split('T')[0]}</td> <td>${tiempo.toFixed(2)} Hrs</td> <td>${tareas}</td>  </tr>`;
       });
   }

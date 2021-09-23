@@ -175,7 +175,7 @@ span{
 }
 .c-btn{
     display: flex;
-    margin-left: 47%;    
+    margin-left: 40%;    
 }
 
 .c-btn>button{    
@@ -206,4 +206,15 @@ button:hover{
     color: #F3F3F3;
     border: none;
     border-radius: 10px;
+}
+
+
+#btnDetener{
+   margin-right: 5%;
+   width: 60px;
+}
+
+
+#btnReiniciar{
+    width: 60px;
 }

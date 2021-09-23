@@ -68,7 +68,7 @@ const signIn = async (e) => {
                 if(jwt.recuperar== "True"){
                     window.location.href = "./RecuperarContraseña.html";
                 }else{
-                    window.location.href = "../MenuPrincipa-Admin/index.html";
+                    window.location.href = "../MenuPrincipal/Menu.html";
                 }
        
             }

@@ -63,12 +63,19 @@ const actualizar = async (e) => {
         }, 3000);
         e.preventDefault();
      }else{
-       
+        if(passwordText.textContent != "Contraseña Segura!"){
+            alerta.textContent = 'Necesita contraseña segura';
+            alerta.style.display = 'block';
+            setTimeout(() => {
+                alerta.style.display = 'none';
+            }, 3000);
+            e.preventDefault();
+        }else{
         GuardarDatos();
         e.preventDefault();
         validar();
         e.preventDefault();
-       
+        }
             
            
      }
@@ -84,7 +91,8 @@ function validar(){
 
 } else if (jwt.rol == "desarrollador") {
 
-       window.location.href = "../MenuPrincipa-Admin/index.html";
+      
+       window.location.href = "../MenuPrincipal/Menu.html";
    
 
 }}

@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </button>
       
       <!-- logo -->
-      <a class="navbar-brand" href="#">
+      <a id="img-logo" class="navbar-brand" href="#">
         <img style="width: 100px;" src="../Navbar/LOGOPLUSTI 2.png" width="75" height="30" alt="">
       </a>
       
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </button>
             
             <!-- logo -->
-            <a class="navbar-brand" href="#">
+            <a id="img-logo" class="navbar-brand" href="#">
               <img style="width: 100px;" src="../Navbar/LOGOPLUSTI 2.png" width="75" height="30" alt="">
             </a>
             
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </button>
             
             <!-- logo -->
-            <a class="navbar-brand" href="#">
+            <a id="img-logo" class="navbar-brand" href="#">
               <img style="width: 100px;" src="../Navbar/LOGOPLUSTI 2.png" width="75" height="30" alt="">
             </a>
             
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </button>
           
           <!-- logo -->
-          <a class="navbar-brand" href="#">
+          <a id="img-logo" class="navbar-brand" href="#">
             <img style="width: 100px;" src="../Navbar/LOGOPLUSTI 2.png" width="75" height="30" alt="">
           </a>
           

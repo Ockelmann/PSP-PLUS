@@ -39,7 +39,9 @@ window.onload = () => {
 
  
 
-        var element = document.querySelector('#Reporte');
+        var element = document.querySelector('#Reporte') ;
+
+    
 
  
 
@@ -93,7 +95,7 @@ function mostrarDatos(datos) {
               <td>${proyectos.fechaHoraFinal.split("T")[0]}</td>
               <td>${proyectos.nombreProyecto}</td>
               <td>${proyectos.nombreDesarrollador}</td>
-              <td>${proyectos.tiempoInvertido}</td>
+              <td>${proyectos.tiempoInvertido} Hrs</td>
             </tr>
         `;
         cardListElement.innerHTML += card;

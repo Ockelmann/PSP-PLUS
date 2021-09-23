@@ -68,62 +68,47 @@ if (stringJWT) {
     jwt = parseJwt(stringJWT);
 }
 const id=jwt.sub;
-// async function GetDatos() {
-//     if (eliminar == 1) {
 
-//         exitoso3.textContent = "Usuario Eliminado Correctamente"
-//         exitoso3.style.display = 'block';
-//         setTimeout(() => {
-//             exitoso3.style.display = 'none';
-//         }, 3000);
-
-//         eliminar = 0;
-//     }
-//     const url = `https://172.30.236.13:8082//api/ReporteActividadesporProyecto?/Actividades`;
-
-//     await fetch(url, {
-//         headers: new Headers({
-//             'Authorization': 'Bearer ' + stringJWT
-//         })
-//     })
-//         .then(respuesta => respuesta.json())
-//         .then(resultado => {
-//             mostrarDatos(resultado);
-//         })
-// }
 
 function mostrarDatos(datos) {
     document.getElementById("lista-actividades").innerHTML = "";
 
-    datos.forEach(actividad => {
+    if(datos.length>0)
+    {
+        datos.forEach(actividad => {
        
-   var arrayfechaI=actividad.fechaHoraInicio.split(/-|T|:/);
-   var fecha_formateadaI=arrayfechaI.splice(0,3).reverse().join('/');
-   var segundosI=arrayfechaI.pop();
-   var hora_formateadaI= arrayfechaI.join(':');
-
-   var arrayfechaF=actividad.fechaHoraFin.split(/-|T|:/);
-   var fecha_formateadaF=arrayfechaF.splice(0,3).reverse().join('/');
-   var segundosF=arrayfechaF.pop();
-   var hora_formateadaF= arrayfechaF.join(':');
-
-
-
-   
-        const card = `
-            <tr>
-              <td>${actividad.descripcion}</td>
-              <td>${fecha_formateadaI} 
-              / ${hora_formateadaI} </td>
-              <td>${fecha_formateadaF} 
-              / ${hora_formateadaF} </td>
-              <td>${actividad.horas.toFixed(2)}</td>
-              <td>${actividad.nombreUsuario}</td>
-
-            </tr>
-        `;
-        cardListElement.innerHTML += card;
-    })
+            var arrayfechaI=actividad.fechaHoraInicio.split(/-|T|:/);
+            var fecha_formateadaI=arrayfechaI.splice(0,3).reverse().join('/');
+            var segundosI=arrayfechaI.pop();
+            var hora_formateadaI= arrayfechaI.join(':');
+         
+            var arrayfechaF=actividad.fechaHoraFin.split(/-|T|:/);
+            var fecha_formateadaF=arrayfechaF.splice(0,3).reverse().join('/');
+            var segundosF=arrayfechaF.pop();
+            var hora_formateadaF= arrayfechaF.join(':');
+         
+         
+         
+            
+                 const card = `
+                     <tr>
+                       <td>${actividad.descripcion}</td>
+                       <td>${fecha_formateadaI} 
+                       / ${hora_formateadaI} </td>
+                       <td>${fecha_formateadaF} 
+                       / ${hora_formateadaF} </td>
+                       <td>${actividad.horas.toFixed(2)}</td>
+                       <td>${actividad.nombreUsuario}</td>
+         
+                     </tr>
+                 `;
+                 cardListElement.innerHTML += card;
+             })
+    }else
+    {
+        cardListElement.innerHTML +=`<tr> <td colspan="9"> Sin Resultados </td> </tr>`;
+    }
+    
 
     
 

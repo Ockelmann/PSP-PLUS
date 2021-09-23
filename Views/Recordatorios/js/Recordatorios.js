@@ -41,7 +41,7 @@ function validacion() {
             exitoso.style.display = 'none';
         }, 3000);
     } else if (val == 2) {
-        exitoso2.textContent = "Usuario Actualizado Correctamente"
+        exitoso2.textContent = "Recordatorio Actualizado Correctamente"
         exitoso2.style.display = 'block';
         setTimeout(() => {
             exitoso2.style.display = 'none';
@@ -106,6 +106,7 @@ function mostrarDatos(datos) {
                         </div>
                         <div class="col" style="display: flex; justify-content:flex-end">
                             <b>${recordatorio.estado}<input class="estado" id="estados"  type="checkbox" value="${recordatorio.estado}" data-id="${recordatorio.idRecordatorios}"></b>
+                            <a class="edit" data-id="${recordatorio.idRecordatorios}"><img src="./img/edit.svg" class="imgedit"  alt="edit" /></a>
                             <a class="delete" data-id="${recordatorio.idRecordatorios}"><img src="./img/delete.svg" class="imgdelete"  alt="delete" /></a>
                         </div>
                     </div>
@@ -125,6 +126,7 @@ function mostrarDatos(datos) {
                         </div>
                         <div class="col" style="display: flex; justify-content:flex-end">
                             <b>${recordatorio.estado}</b>
+                            <a class="edit" data-id="${recordatorio.idRecordatorios}"><img src="./img/edit.svg" class="imgedit"  alt="edit" /></a>
                             <a class="delete" data-id="${recordatorio.idRecordatorios}"><img src="./img/delete.svg" class="imgdelete"  alt="delete" /></a>
                         </div>
                     </div>
@@ -150,6 +152,7 @@ function mostrarDatos(datos) {
                     </div>
                     <div class="col" style="display: flex; justify-content:flex-end">
                         <b>${recordatorio.estado}<input class="estado" id="estados"   type="checkbox" value="${recordatorio.estado}" data-id="${recordatorio.idRecordatorios}"></b> 
+                        <a class="edit" data-id="${recordatorio.idRecordatorios}"><img src="./img/edit.svg" class="imgedit"  alt="edit" /></a>
                         <a class="delete" data-id="${recordatorio.idRecordatorios}"><img src="./img/delete.svg"  alt="delete" class="imgdelete"/></a>
                     </div>
                 </div>
@@ -169,6 +172,7 @@ function mostrarDatos(datos) {
                     </div>
                     <div class="col" style="display: flex; justify-content:flex-end">
                         <b>${recordatorio.estado}</b> 
+                        <a class="edit" data-id="${recordatorio.idRecordatorios}"><img src="./img/edit.svg" class="imgedit"  alt="edit" /></a>
                         <a class="delete" data-id="${recordatorio.idRecordatorios}"><img src="./img/delete.svg"  alt="delete" class="imgdelete"/></a>
                     </div>
                 </div>
@@ -197,6 +201,7 @@ function mostrarDatos(datos) {
                     </div>
                     <div class="col" style="display: flex; justify-content:flex-end">
                         <b>${recordatorio.estado}<input class="estado" id="estados"   type="checkbox" value="${recordatorio.estado}" data-id="${recordatorio.idRecordatorios}" ></b>
+                        <a class="edit" data-id="${recordatorio.idRecordatorios}"><img src="./img/edit.svg" class="imgedit"  alt="edit" /></a>
                         <a class="delete" data-id="${recordatorio.idRecordatorios}"><img src="./img/delete.svg" alt="delete"  class="imgdelete"/></a>
                     </div>
                 </div>
@@ -216,6 +221,7 @@ function mostrarDatos(datos) {
                     </div>
                     <div class="col" style="display: flex; justify-content:flex-end">
                         <b>${recordatorio.estado}</b>
+                        <a class="edit" data-id="${recordatorio.idRecordatorios}"><img src="./img/edit.svg" class="imgedit"  alt="edit" /></a>
                         <a class="delete" data-id="${recordatorio.idRecordatorios}"><img src="./img/delete.svg" alt="delete"  class="imgdelete"/></a>
                     </div>
                 </div>
@@ -240,6 +246,7 @@ function mostrarDatos(datos) {
                         </div>
                         <div class="col" style="display: flex; justify-content:flex-end">
                             <b>${recordatorio.estado}<input class="estado" id="estados"  type="checkbox" value="${recordatorio.estado}" data-id="${recordatorio.idRecordatorios}"></b> 
+                            <a class="edit" data-id="${recordatorio.idRecordatorios}"><img src="./img/edit.svg" class="imgedit"  alt="edit" /></a>
                             <a class="delete" data-id="${recordatorio.idRecordatorios}"><img src="./img/delete.svg" alt="delete" class="imgdelete"/></a>
                         </div>
                     </div>
@@ -259,6 +266,7 @@ function mostrarDatos(datos) {
                         </div>
                         <div class="col" style="display: flex; justify-content:flex-end">
                             <b>${recordatorio.estado}</b> 
+                            <a class="edit" data-id="${recordatorio.idRecordatorios}"><img src="./img/edit.svg" class="imgedit"  alt="edit" /></a>
                             <a class="delete" data-id="${recordatorio.idRecordatorios}"><img src="./img/delete.svg" alt="delete" class="imgdelete"/></a>
                         </div>
                     </div>
@@ -275,7 +283,11 @@ function mostrarDatos(datos) {
     )
 
 
-    
+    var elements = document.getElementsByClassName("edit");
+
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].addEventListener('click', editRecordatorio);
+    }
 
     var elements2 = document.getElementsByClassName("delete");
 
@@ -295,7 +307,7 @@ function mostrarDatos(datos) {
 
 async function actualizarEstado(e) {
    
-  debugger;
+  
     const recordatorio = e.target.parentElement.parentElement;
     const recordatorioid = recordatorio.querySelector('input').getAttribute('data-id');
     const recordatoriovalor = recordatorio.querySelector('input').getAttribute('value');
@@ -321,27 +333,7 @@ async function actualizarEstado(e) {
 async function deleteRecordatorio(e) {
     const recordatorio = e.target.parentElement.parentElement;
     const recordatorioid = recordatorio.querySelector('a').getAttribute('data-id');
-   /* const confirmar = confirm('¿Desea Eliminar Usuario?');
-    if (confirmar) {
-
-        const urlActualizarUsuario = `https://localhost:5001/api/Recordatorios?idRecordatorio=${recordatorioid}`;
-
-        await fetch(urlActualizarUsuario, {
-            method: 'DELETE',
-            headers: new Headers({
-                'Authorization': 'Bearer ' + stringJWT
-            })
-        })
-            .then(respuesta => respuesta)
-
-        eliminar = 1;
-        GetDatos();
-
-    } else {
-
-        return;
-
-    }*/
+   
 
     try {
         const {isConfirmed} = await Swal.fire({
@@ -374,7 +366,32 @@ async function deleteRecordatorio(e) {
   
 }
 
+async function editRecordatorio(e) {
+    const recordatorio = e.target.parentElement.parentElement;
+    const recordatorioid = recordatorio.querySelector('a').getAttribute('data-id');
+   
 
+    try {
+        const {isConfirmed} = await Swal.fire({
+            title: 'Editar Recordatorio',
+            text: "¿Estas seguro que deseas editar este recordatorio?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Editar'
+        })
+        if(!isConfirmed){
+            return;
+        }
+
+        window.location.href = (`./Editar-Recordatorio.html?recordatorioid=${recordatorioid}`);
+        
+    } catch (error) {
+        Swal.fire("Problemas al editar el recordatorio.");
+    }
+  
+}
 
 
 
