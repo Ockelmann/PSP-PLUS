@@ -118,10 +118,10 @@ function mostrarDatos(datos) {
 async function llenarSelect(){
     if(jwt.rol == "desarrollador"){
         console.log(jwt.rol);
-        url= `https://localhost:5001/api/ReporteActividadesporProyecto?id=${id}`;
+        url= `${URL_Global}/ReporteActividadesporProyecto?id=${id}`;
     }else if(jwt.rol == "administrador"){
         console.log(jwt.rol);
-        url = `https://localhost:5001/api/ActividadesporProyectoAdmin?id=${id}`;
+        url = `${URL_Global}/ActividadesporProyectoAdmin?id=${id}`;
     }
     
     await fetch(url, {
@@ -162,10 +162,10 @@ async function searchCursos() {
         document.getElementById("lista-actividades").innerHTML = "";
         if(jwt.rol == "desarrollador"){
             console.log(jwt.rol);
-            url = `https://localhost:5001/api/ReporteActividadesporProyecto?proyecto=${inpuntsearch.value}&idUsuario=${id}`;
+            url = `${URL_Global}/ReporteActividadesporProyecto?proyecto=${inpuntsearch.value}&idUsuario=${id}`;
         }else if(jwt.rol == "administrador"){
             console.log(jwt.rol);
-            url = `https://localhost:5001/api/ActividadesporProyectoAdmin?proyecto=${inpuntsearch.value}`;
+            url = `${URL_Global}/ActividadesporProyectoAdmin?proyecto=${inpuntsearch.value}`;
         }
 
 

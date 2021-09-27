@@ -3,7 +3,7 @@
 */
 
  
-const URL = `https://localhost:5001/api/Usuarios/SignIn`;const emailInput = document.getElementById("inputEmail");
+const URL = `${URL_Global}/Usuarios/SignIn`;const emailInput = document.getElementById("inputEmail");
  
 const passwordInput = document.getElementById("inputPassword");
 const form = document.getElementById('signin-form');
@@ -90,7 +90,7 @@ async function recuperar(){
                 alerta.style.display = 'none';
             }, 3000);
     }else{
-        const url = `https://localhost:5001/api/RecuperarContraseña?correo=${inputEmail.value}`;
+        const url = `${URL_Global}/RecuperarContraseña?correo=${inputEmail.value}`;
 
     await fetch(url, {
         method: 'PUT',

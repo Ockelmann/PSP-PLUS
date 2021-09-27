@@ -1,4 +1,4 @@
-const requestUrl = `${URL}/ComboDesarrolladores`
+const requestUrl = `${URL_Global}/ComboDesarrolladores`
 
 
 const usuarioService = {

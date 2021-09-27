@@ -72,7 +72,7 @@ async function GetDatos() {
 
         eliminar = 0;
     }*/
-    const url = `https://localhost:5001/api/EquipoDesarrolloNombre`;
+    const url = `${URL_Global}/EquipoDesarrolloNombre`;
 
     await fetch(url, {
         headers: new Headers({
@@ -190,8 +190,8 @@ async function eliminarUsuario(e) {
             return;
         }
 
-        const url = `https://localhost:5001/api/ActividadesPSP?idUsuario=${userid}`;
-        const url2 = `https://localhost:5001/api/ProyectoDesarrollador?idUsuario=${userid}`;
+        const url = `${URL_Global}/ActividadesPSP?idUsuario=${userid}`;
+        const url2 = `${URL_Global}/ProyectoDesarrollador?idUsuario=${userid}`;
 let number=0;
         await fetch(url, {
             headers: new Headers({
@@ -238,7 +238,7 @@ async function validarEliminacion(resultado,userid){
         return;
     } else{
 
-        const urlActualizarUsuario = `https://localhost:5001/api/AgregarUsuarios?idUsuario=${userid}`;
+        const urlActualizarUsuario = `${URL_Global}/AgregarUsuarios?idUsuario=${userid}`;
 
         await fetch(urlActualizarUsuario, {
             method: 'DELETE',
@@ -265,7 +265,7 @@ async function searchCursos() {
     }
     else {
         document.getElementById("lista-usuarios").innerHTML = "";
-        const url = `https://localhost:5001/api/EquipoDesarrolloNombre?correo=${inpuntsearch.value}`;
+        const url = `${URL_Global}/EquipoDesarrolloNombre?correo=${inpuntsearch.value}`;
         await fetch(url, {
             headers: new Headers({
                 'Authorization': 'Bearer ' + stringJWT
@@ -290,7 +290,7 @@ async function actualizarEstado(e){
     const usuario = e.target.parentElement.parentElement;
     const userid = usuario.querySelector('button').getAttribute('data-id');
 
-    const url = `https://localhost:5001/api/ActualizarEstadoUser?idUsuario=${userid}`;
+    const url = `${URL_Global}/ActualizarEstadoUser?idUsuario=${userid}`;
 
     await fetch(url, {
         method: 'PUT',

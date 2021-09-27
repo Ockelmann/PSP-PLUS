@@ -10,7 +10,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>PSP_</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>FolderProfile1</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\juceg\Documents\C#\Proyecto PSP +\Proyecto_PSP-\Properties\PublishProfiles\FolderProfile1.pubxml</NameOfLastUsedPublishProfile>
     <ShowAllFiles>true</ShowAllFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

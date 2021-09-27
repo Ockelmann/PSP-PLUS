@@ -124,10 +124,10 @@ async function GetDatos() {
         
         var url;
     if(jwt.rol == "desarrollador"){        
-         url = `https://localhost:5001/api/ReporteTipoError?tipoerror=${inputproyecto.value}&idUsuario=${jwt.sub}`;
+         url = `${URL_Global}/ReporteTipoError?tipoerror=${inputproyecto.value}&idUsuario=${jwt.sub}`;
 
     }else if(jwt.rol == "administrador"){
-        url = `https://localhost:5001/api/ReporteTipoError?tipoerror=${inputproyecto.value}`;
+        url = `${URL_Global}/ReporteTipoError?tipoerror=${inputproyecto.value}`;
     }
 
  

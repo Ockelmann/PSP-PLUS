@@ -65,9 +65,9 @@ window.onload = () => {
 async function getProyectos() {
     var url;
     if(jwt.rol == "desarrollador"){
-        url = `https://localhost:5001/api/ReporteErroresProyecto?idUsuario=${jwt.sub}`;
+        url = `${URL_Global}/ReporteErroresProyecto?idUsuario=${jwt.sub}`;
     }else if(jwt.rol == "administrador"){
-        url = `https://localhost:5001/api/ReporteErroresProyecto`;
+        url = `${URL_Global}/ReporteErroresProyecto`;
     }
     
 
@@ -115,7 +115,7 @@ async function GetDatos() {
             alerta.style.display = 'none';
         }, 3000);
     }else{
-    const url = `https://localhost:5001/api/ReporteErroresProyectoTabla?idProyecto=${inputproyecto.value}`;
+    const url = `${URL_Global}/ReporteErroresProyectoTabla?idProyecto=${inputproyecto.value}`;
 
     await fetch(url, {
         headers: new Headers({

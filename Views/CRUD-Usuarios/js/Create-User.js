@@ -74,7 +74,7 @@ function validarCorreos(usuarios) {
 }
 
 async function getEquipos() {
-    const url = `https://localhost:5001/api/GetEquiposDesarrollo`;
+    const url = `${URL_Global}/GetEquiposDesarrollo`;
 
     await fetch(url, {
         headers: new Headers({
@@ -112,7 +112,7 @@ function cargar() {
 async function agregarUser() {
 
 
-    const usarios = `https://localhost:5001/api/EquipoDesarrolloNombre`;
+    const usarios = `${URL_Global}/EquipoDesarrolloNombre`;
 
     await fetch(usarios, {
         headers: new Headers({
@@ -138,7 +138,7 @@ async function agregarUser() {
         return;
     }
 
-    const url = `https://localhost:5001/api/AgregarUsuarios?nombre=${inputNombre.value}&apellido=${inputApellido.value}&email=${inputEmail.value}&clave=${inputClave.value}&fechaNacimiento=${inputFecha.value}&idEquipo=${inputEquipo.value}&rol=${inputRol.value}`;
+    const url = `${URL_Global}/AgregarUsuarios?nombre=${inputNombre.value}&apellido=${inputApellido.value}&email=${inputEmail.value}&clave=${inputClave.value}&fechaNacimiento=${inputFecha.value}&idEquipo=${inputEquipo.value}&rol=${inputRol.value}`;
 
     await fetch(url, {
         method: 'POST',

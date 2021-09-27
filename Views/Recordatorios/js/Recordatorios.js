@@ -67,7 +67,7 @@ async function GetDatos() {
 
         eliminar = 0;
     }
-    const url = `https://localhost:5001/api/Recordatorios?idUsuario=${jwt.sub}`;
+    const url = `${URL_Global}/Recordatorios?idUsuario=${jwt.sub}`;
 
     await fetch(url, {
         headers: new Headers({
@@ -313,7 +313,7 @@ async function actualizarEstado(e) {
     const recordatoriovalor = recordatorio.querySelector('input').getAttribute('value');
     if(recordatoriovalor == "No Leído"){
 
-        const url = `https://localhost:5001/api/Recordatorios?idRecordatorio=${recordatorioid}&estado=Leído`;
+        const url = `${URL_Global}/Recordatorios?idRecordatorio=${recordatorioid}&estado=Leído`;
 
         await fetch(url, {
             method: 'PUT',
@@ -348,7 +348,7 @@ async function deleteRecordatorio(e) {
         if(!isConfirmed){
             return;
         }
-        const urlActualizarUsuario = `https://localhost:5001/api/Recordatorios?idRecordatorio=${recordatorioid}`;
+        const urlActualizarUsuario = `${URL_Global}/Recordatorios?idRecordatorio=${recordatorioid}`;
 
         await fetch(urlActualizarUsuario, {
             method: 'DELETE',

@@ -32,7 +32,7 @@ if (stringJWT) {
 
 
 async function getEquipo(){
-    const url = `https://localhost:5001/api/GetEquiposDesarrollo?idEquipo=${idEquipo}`;
+    const url = `${URL_Global}/GetEquiposDesarrollo?idEquipo=${idEquipo}`;
 
     await fetch(url, {
         headers: new Headers({
@@ -67,7 +67,7 @@ function validar(){
 }
 
 async function editUser(){
-    const url = `https://localhost:5001/api/GetEquiposDesarrollo?idEquipo=${idEquipo}&nombre=${inputNombre.value}&descripcion=${inputDescripcion.value}`;
+    const url = `${URL_Global}/GetEquiposDesarrollo?idEquipo=${idEquipo}&nombre=${inputNombre.value}&descripcion=${inputDescripcion.value}`;
 
     await fetch(url, {
         method: 'PUT',

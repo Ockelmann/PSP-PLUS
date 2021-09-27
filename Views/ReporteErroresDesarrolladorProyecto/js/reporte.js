@@ -80,7 +80,7 @@ function setDevOptions(usuarios) {
 };
 
 async function fillSelectDev() {
-    const url = `https://localhost:5001/api/ComboDesarrolladores`;
+    const url = `${URL_Global}/ComboDesarrolladores`;
 
     await fetch(url, {
         headers: new Headers({
@@ -110,7 +110,7 @@ async function cargarProyectos() {
     $("#select-project").find('option').remove();
     if (jwt.rol == "administrador") {
         if (selectDev.value != "") {
-            const url = `https://localhost:5001/api/ComboProyectos?idUsuario=${selectDev.value}`;
+            const url = `${URL_Global}/ComboProyectos?idUsuario=${selectDev.value}`;
 
             await fetch(url, {
                 headers: new Headers({
@@ -125,7 +125,7 @@ async function cargarProyectos() {
             searchButton.style.visibility = "hidden";
         }
     } else if (jwt.rol == "desarrollador") {
-        const url = `https://localhost:5001/api/ComboProyectos?idUsuario=${jwt.sub}`;
+        const url = `${URL_Global}/ComboProyectos?idUsuario=${jwt.sub}`;
 
         await fetch(url, {
             headers: new Headers({
@@ -176,9 +176,9 @@ function BusquedaReporte() {
 async function GetDatos() {
     var url;
     if (jwt.rol == "administrador") {
-        url = `https://localhost:5001/api/ReporteErroresDesarrolladorProyecto?idProyecto=${selecProject.value}&idUsuario=${selectDev.value}`;
+        url = `${URL_Global}/ReporteErroresDesarrolladorProyecto?idProyecto=${selecProject.value}&idUsuario=${selectDev.value}`;
     } else if (jwt.rol == "desarrollador") {
-        url = `https://localhost:5001/api/ReporteErroresDesarrolladorProyecto?idProyecto=${selecProject.value}&idUsuario=${jwt.sub}`;
+        url = `${URL_Global}/ReporteErroresDesarrolladorProyecto?idProyecto=${selecProject.value}&idUsuario=${jwt.sub}`;
     }
 
     await fetch(url, {

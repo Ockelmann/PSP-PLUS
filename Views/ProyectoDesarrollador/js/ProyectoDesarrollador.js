@@ -25,7 +25,7 @@ window.onload = () => {
 }
 
 async function getdatos() {
-    const url = `https://localhost:5001/api/ProyectoDesarrollador?idUsuario=${jwt.sub}`;
+    const url = `${URL_Global}/ProyectoDesarrollador?idUsuario=${jwt.sub}`;
 
     await fetch(url, {
             headers: new Headers({
@@ -56,7 +56,7 @@ function mostrardatos(datos) {
             var fechafinalreal = "";
         } else {
             var fechaSplit4 = proyecto.fechaFinalReal.split("T");
-            var fechainicioreal = fechaSplit4[0];
+            var fechafinalreal = fechaSplit4[0];
         }
 
         const card = `
@@ -139,7 +139,7 @@ async function eliminarProyecto(e) {
         }
 
 
-        const url = `https://localhost:5001/api/ProyectoDesarrollador?idproyecto=${proyectoid}`;
+        const url = `${URL_Global}/ProyectoDesarrollador?idproyecto=${proyectoid}`;
 
         await fetch(url, {
                 method: 'DELETE',
@@ -186,7 +186,7 @@ async function eliminarProyecto(e) {
         }
 
 
-        const url = `https://localhost:5001/api/ProyectoDesarrollador?idproyecto=${proyectoid}`;
+        const url = `${URL_Global}/ProyectoDesarrollador?idproyecto=${proyectoid}`;
 
         await fetch(url, {
                 method: 'DELETE',
@@ -209,7 +209,7 @@ async function eliminarProyecto(e) {
 
 async function validarcascada(){
 
-    const url = `https://localhost:5001/api/GetUsuarioProyecto`;
+    const url = `${URL_Global}/GetUsuarioProyecto`;
 
     await fetch(url, {
         headers: new Headers({
@@ -239,7 +239,7 @@ async function searchCursos() {
     }
     else {
         document.getElementById("lista-proyectos").innerHTML = "";
-        const url = `https://localhost:5001/api/GetProyectosBusqueda?nombreProyecto=${inpuntsearch.value}&idUsuarios=${jwt.sub}`;
+        const url = `${URL_Global}/GetProyectosBusqueda?nombreProyecto=${inpuntsearch.value}&idUsuarios=${jwt.sub}`;
         
         await fetch(url, {
             headers: new Headers({

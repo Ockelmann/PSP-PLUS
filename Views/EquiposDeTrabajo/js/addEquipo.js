@@ -25,7 +25,7 @@ if (stringJWT) {
 
 async function agregarEquipo() {
 
-    const url = `https://localhost:5001/api/GetEquiposDesarrollo?nombre=${inputNombre.value}&descripcion=${inputDescripcion.value}`;
+    const url = `${URL_Global}/GetEquiposDesarrollo?nombre=${inputNombre.value}&descripcion=${inputDescripcion.value}`;
 
     await fetch(url, {
         method: 'POST',

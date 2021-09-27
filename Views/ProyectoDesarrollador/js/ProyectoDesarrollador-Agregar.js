@@ -28,7 +28,7 @@ if (stringJWT) {
 
 
 async function agregarProyecto() {
-    const url = `https://localhost:5001/api/ProyectoDesarrollador?nombre=${inputNombre.value}&descripcion=${inputDescripcion.value}&cliente=${inputCliente.value}&fechainicioesperada=${inputFechaInicioEsperada.value}&fechafinalesperada=${inputFechaFinalEsperada.value}&dev=${inputDev.value}`;
+    const url = `${URL_Global}/ProyectoDesarrollador?nombre=${inputNombre.value}&descripcion=${inputDescripcion.value}&cliente=${inputCliente.value}&fechainicioesperada=${inputFechaInicioEsperada.value}&fechafinalesperada=${inputFechaFinalEsperada.value}&dev=${inputDev.value}`;
 
     await fetch(url, {
         method: 'POST',
@@ -37,7 +37,7 @@ async function agregarProyecto() {
         })
     });
 
-    const url2 = `https://localhost:5001/api/AgregarDesarrolladorProyecto?idusuario=${jwt.sub}`;
+    const url2 = `${URL_Global}/AgregarDesarrolladorProyecto?idusuario=${jwt.sub}`;
 
     await fetch(url2, {
         method: 'POST',

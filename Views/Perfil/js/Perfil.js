@@ -43,7 +43,7 @@ function mostrar() {
 
 function GetDatos() {
     
-    const url = `https://localhost:5001/api/Perfil?idUsuario=${jwt.sub}`;
+    const url = `${URL_Global}/Perfil?idUsuario=${jwt.sub}`;
 
     fetch(url, {
         headers: new Headers({
@@ -101,7 +101,7 @@ async function actualizar() {
            
             console.log("Actualizando..")
             console.log(equipoInput.value)
-            const urlActualizarUsuario = `https://localhost:5001/api/Perfil?idUsuario=${jwt.sub}&nombre=${nombresInput.value}&apellido=${apellidosInput.value}&email=${correoInput.value}&clave=${contra}&fechaNacimiento=${fechaInput.value}&idEquipo=${idEquipo}`;
+            const urlActualizarUsuario = `${URL_Global}/Perfil?idUsuario=${jwt.sub}&nombre=${nombresInput.value}&apellido=${apellidosInput.value}&email=${correoInput.value}&clave=${contra}&fechaNacimiento=${fechaInput.value}&idEquipo=${idEquipo}`;
 
             await fetch(urlActualizarUsuario, {
                 method: 'PUT',

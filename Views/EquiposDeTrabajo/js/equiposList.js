@@ -72,7 +72,7 @@ async function GetDatos() {
 
         eliminar = 0;
     }
-    const url = `https://localhost:5001/api/GetEquiposDesarrollo`;
+    const url = `${URL_Global}/GetEquiposDesarrollo`;
 
     await fetch(url, {
         headers: new Headers({
@@ -158,7 +158,7 @@ async function eliminarEquipo(e) {
             }
         }
 
-        const urlEliminarEquipo = `https://localhost:5001/api/GetEquiposDesarrollo?idEquipo=${equipoId}`;
+        const urlEliminarEquipo = `${URL_Global}/GetEquiposDesarrollo?idEquipo=${equipoId}`;
 
         await fetch(urlEliminarEquipo, {
             method: 'DELETE',
@@ -179,7 +179,7 @@ async function eliminarEquipo(e) {
 
 async function validarcascada(){
 
-    const url = `https://localhost:5001/api/AgregarUsuarios`;
+    const url = `${URL_Global}/AgregarUsuarios`;
 
     await fetch(url, {
         headers: new Headers({
@@ -210,7 +210,7 @@ async function searchProyectos() {
     }
     else {
         document.getElementById("lista-equipos").innerHTML = "";
-        const url = `https://localhost:5001/api/equiposTrabajoBusqueda?nombre=${inpuntsearch.value}`;
+        const url = `${URL_Global}/equiposTrabajoBusqueda?nombre=${inpuntsearch.value}`;
         await fetch(url, {
             headers: new Headers({
                 'Authorization': 'Bearer ' + stringJWT

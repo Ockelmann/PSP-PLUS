@@ -97,7 +97,7 @@ const bt = document.querySelector("#btn");
         
             
             
-            const url = `https://localhost:5001/api/Reporte_Analisis/${sel.value},${fnn},${inn}`;
+            const url = `${URL_Global}/Reporte_Analisis/${sel.value},${fnn},${inn}`;
             cargar(url);
         
          
@@ -126,7 +126,7 @@ setTimeout(() => {
    
    
      
-        const url = `https://localhost:5001/api/Reporte_Analisis/${jwt.sub},${fnn},${inn}`;
+        const url = `${URL_Global}/Reporte_Analisis/${jwt.sub},${fnn},${inn}`;
         cargar(url);
      
      

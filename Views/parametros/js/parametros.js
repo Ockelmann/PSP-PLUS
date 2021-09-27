@@ -50,7 +50,7 @@ function validacion() {
 
 
 async function GetDatos() {
-    const url = `https://localhost:5001/api/Parametros`;
+    const url = `${URL_Global}/Parametros`;
 
     await fetch(url, {
         headers: new Headers({

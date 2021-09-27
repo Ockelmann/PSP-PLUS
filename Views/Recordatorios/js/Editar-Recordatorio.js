@@ -43,7 +43,7 @@ window.onload = () => {
 }
 
 async function getEquipos() {
-    const url = `https://localhost:5001/api/ProyectoAdmin`;
+    const url = `${URL_Global}/ProyectoAdmin`;
 
     await fetch(url, {
         headers: new Headers({
@@ -90,7 +90,7 @@ function cargar() {
 }
 
 async function getRecordatorio(){
-    const url = `https://localhost:5001/api/EditarRecordatorio?idRecordatorio=${idRecordatorio}`;
+    const url = `${URL_Global}/EditarRecordatorio?idRecordatorio=${idRecordatorio}`;
 
     await fetch(url, {
         headers: new Headers({
@@ -220,7 +220,7 @@ async function validar(){
                 return;
             } else {
                
-                const url = `https://localhost:5001/api/EditarRecordatorio?idRecordatorio=${idRecordatorio}&descripcion=${inputDescripcion.value}&idUsuario=${jwt.sub}&tipoRecordatorio=${inputCondicion.value}&fechaHoraRecordatorio=${inputFechayHora.value}`;
+                const url = `${URL_Global}/EditarRecordatorio?idRecordatorio=${idRecordatorio}&descripcion=${inputDescripcion.value}&idUsuario=${jwt.sub}&tipoRecordatorio=${inputCondicion.value}&fechaHoraRecordatorio=${inputFechayHora.value}`;
 
                 await fetch(url, {
                     method: 'PUT',
@@ -245,7 +245,7 @@ async function validar(){
                 return;
             } else {
         
-                const url = `https://localhost:5001/api/EditarRecordatorio?idRecordatorio=${idRecordatorio}&descripcion=${inputDescripcion.value}&idUsuario=${jwt.sub}&tipoRecordatorio=${inputCondicion.value}&idProyecto=${inputProyecto.value}&horasAlerta=${inputHoraTotal.value}`;
+                const url = `${URL_Global}/EditarRecordatorio?idRecordatorio=${idRecordatorio}&descripcion=${inputDescripcion.value}&idUsuario=${jwt.sub}&tipoRecordatorio=${inputCondicion.value}&idProyecto=${inputProyecto.value}&horasAlerta=${inputHoraTotal.value}`;
 
                 await fetch(url, {
                     method: 'PUT',
@@ -270,7 +270,7 @@ async function validar(){
                 return;
             } else {
         
-                const url = `https://localhost:5001/api/EditarRecordatorio?idRecordatorio=${idRecordatorio}&descripcion=${inputDescripcion.value}&idUsuario=${jwt.sub}&tipoRecordatorio=${inputCondicion.value}&fechaHoraRecordatorio=${inputFechayHora.value}&idProyecto=${inputProyecto.value}`;
+                const url = `${URL_Global}/EditarRecordatorio?idRecordatorio=${idRecordatorio}&descripcion=${inputDescripcion.value}&idUsuario=${jwt.sub}&tipoRecordatorio=${inputCondicion.value}&fechaHoraRecordatorio=${inputFechayHora.value}&idProyecto=${inputProyecto.value}`;
 
                 await fetch(url, {
                     method: 'PUT',
@@ -295,7 +295,7 @@ async function validar(){
                     return;
                 } else {
             
-                    const url = `https://localhost:5001/api/EditarRecordatorio?idRecordatorio=${idRecordatorio}&descripcion=${inputDescripcion.value}&idUsuario=${jwt.sub}&tipoRecordatorio=${inputCondicion.value}&idProyecto=${inputProyecto.value}`;
+                    const url = `${URL_Global}/EditarRecordatorio?idRecordatorio=${idRecordatorio}&descripcion=${inputDescripcion.value}&idUsuario=${jwt.sub}&tipoRecordatorio=${inputCondicion.value}&idProyecto=${inputProyecto.value}`;
 
                     await fetch(url, {
                         method: 'PUT',

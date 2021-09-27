@@ -33,7 +33,7 @@ if (stringJWT) {
 
 
 async function getParams(){
-    const url = `https://localhost:5001/api/Parametros`;
+    const url = `${URL_Global}/Parametros`;
 
     await fetch(url, {
         headers: new Headers({
@@ -68,7 +68,7 @@ function validar(){
 }
 
 async function editUser(){
-    const url = `https://localhost:5001/api/Parametros?inactividad=${inputInactividad.value}&correo=${inputCorreo.value}&clave=${inputClave.value}`;
+    const url = `${URL_Global}/Parametros?inactividad=${inputInactividad.value}&correo=${inputCorreo.value}&clave=${inputClave.value}`;
 
     await fetch(url, {
         method: 'PUT',

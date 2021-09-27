@@ -100,7 +100,7 @@ function validar(){
 
 async function  GuardarDatos(){
 
-    const url = `https://localhost:5001/api/ActualizarContraseña?idUsuario=${jwt.sub}&clave=${inputClave.value}`;
+    const url = `${URL_Global}/ActualizarContraseña?idUsuario=${jwt.sub}&clave=${inputClave.value}`;
         
         await fetch(url, {
             method: 'PUT',
