@@ -15,16 +15,25 @@ variables:
 
 steps:
 - task: UseDotNet@2
-  displayName: 'Install .NET Core SDK'
   inputs:
-    version: 5.0.x
-    performMultiLevelLookup: true
-    includePreviewVersions: true # Required for preview versions
+    packageType: 'sdk'
+    version: '5.0.x'
+
+#- task: UseDotNet@2
+#  displayName: 'Install .NET Core SDK'
+#  inputs:
+#    packageType: 'runtime'
+#    version: '5.0.x'
+#    includePreviewVersions: true
+#    performMultiLevelLookup: true
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
+    projects: '**/*.csproj'
+    arguments: '--configuration $(buildConfiguration) '
   displayName: 'Build projects'
+
   
 - task: DotNetCoreCLI@2
   inputs:
@@ -40,7 +49,26 @@ steps:
     publishWebProjects: True
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory) '
 #    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory) --self-contained true --runtime win-x64 '
-  
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      $PathGlobal="$(Build.SourcesDirectory)/Views/global/globals.js"
+      if (Test-Path -Path $PathGlobal -PathType Leaf) {
+            Write-Host "Cannot create [$PathGlobal] because a file with that name already exists."
+            Remove-Item -Path $PathGlobal -Force
+      }
+
+      try {
+        $null = New-Item -ItemType File -Path $PathGlobal -Force -ErrorAction Stop -Value "const URL_Global = ""https://selfhostedpipe.plus-ti.com:5000/pspplus_be/api""; "
+        Write-Host "The file [$PathGlobal] has been created."
+      }
+      catch {
+        throw $_.Exception.Message
+      }
+
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
