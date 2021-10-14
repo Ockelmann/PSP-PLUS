@@ -1,0 +1,56 @@
+/*
+    Desarrollador: Rogelio Raúl Castañeda Flores
+*/
+
+:root {
+    --color-blue-medium: #8fe2e4;
+    --color-purple: #632ce7;
+    --color-gray: #ccc;
+    --color-gray-medium: #f8f9fa;
+    --color-yellow: #fac32c;
+  
+    position: relative;
+    min-height: 100%;
+  }
+  
+  html{
+    min-height: 100%;
+    position: relative;
+}
+
+body{
+    margin: 0;
+    margin-bottom: 120px;
+}
+  
+  /* ------ ------------------- ------- */
+  /* ------ Contenedor Principal ------ */
+  /* ------ ------------------- ------- */
+  
+  .contenedor {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: block;
+    margin-top: 30px;
+}
+
+#imgeditar:hover{
+  cursor: pointer;
+}
+
+
+footer {
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

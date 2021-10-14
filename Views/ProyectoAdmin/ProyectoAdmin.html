@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSP+ | Agregar Proyectos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/ProyectoAdmin.css">
+    <link rel="stylesheet" href="../Navbar/nav.css">
+    <link rel="icon" type="image/png" href="../img/icon.png">
+</head>
+
+<body>
+    <header id="header">
+  
+    </header>
+    <div class="container">
+
+        <h1 class="titulo">Agregar Proyecto</h1>
+        <div class="div" style="width: 80%;  text-align: center; margin-left: auto; margin-right: auto;">
+            <img id="imgProyecto" src="./img/Proyecto_1.svg" style="width: 35%;">
+        </div>
+
+
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="nombre" aria-describedby="inputGroup-sizing-default" placeholder="Nombre" required>
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="descripcion" aria-describedby="inputGroup-sizing-default" placeholder="Descripcion" required>
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="cliente" aria-describedby="inputGroup-sizing-default" placeholder="Cliente" required>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default" style="background-color: #B5B5B5">Fecha Inicio Esperada:</span>
+            <input type="date" class="form-control" id="fechainicioesperada" aria-describedby="inputGroup-sizing-default" placeholder="FechaInicioEsperada" style="color: #000000;" required>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default" style="background-color: #B5B5B5">Fecha Final Esperada:</span>
+            <input type="date" class="form-control" id="fechafinalesperada" aria-describedby="inputGroup-sizing-default" placeholder="FechaFinalEsperada" style="color: #000000;" required>
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="dev" aria-describedby="inputGroup-sizing-default" placeholder="Dev" required>
+        </div>
+
+        <div class="alert alert-danger" id="alert" role="alert" style="display: none;">
+            Es necesario agregar todos los campos
+        </div>
+
+        <div class="alert alert-info" id="guardado" role="alert" style="display: none;">
+            Proyecto agregado correctamente
+        </div>
+
+        <div style="width: 80%;  text-align: center; margin-left: auto; margin-right: auto;  padding-top: 25px;">
+            <button type="button" class="btn" id="agregar" onclick="validar();">Agregar</button>
+        </div>
+
+    </div>
+    <footer>
+        <img src="../img/LOGOPLUSTI 2.svg" id="" alt="" width="140px">
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="../Navbar/accionnav.js"></script>
+    <script src="../global/globals.js"></script>
+    <script src="../sessiontime.js"></script>
+    
+    <script src="./js/ProyectoAdmin-Agregar.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

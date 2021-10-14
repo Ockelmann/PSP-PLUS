@@ -1,0 +1,27 @@
+.navbar
+{
+    background: #09254F;
+    color:white;
+}
+.nav-link
+{
+    color: white;
+}
+.navh
+{
+    width: 25px;
+    height: 25px;
+ 
+}
+.navbar-brand{
+    margin-left: 20px;
+}
+
+.nombre-nav{
+    font-size: 1em;
+    color: #c4c4c4;
+}
+
+#opciones{
+    margin-left: 20px;
+}

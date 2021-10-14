@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Login.css">
+    <link rel="icon" type="image/png" href="./img/icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>PSP+ | Recupera Contraseña</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="info-section">
+            <div class="alert alert-danger" role="alert" id="alert" style="text-align: center; display: none;">
+
+            </div>
+            <img id="logo" src="./img/LOGOPLUSTI 2.svg" alt="Logo">
+            <h2 id="bienvenida">PSP+</h2>
+            <p id="description" style="text-align: center;">Registra el tiempo dedicado a cada una de tus tareas.
+            </p>
+        </div>
+        <div id="login-section">
+            <form id="signin-form" style="flex-direction:column; width: 100%; display: flex; justify-content:center; align-items:center;">
+                <h1 id="titulo" style="margin-bottom: 15px;">Cambiar Contraseña</h1>
+                <input type="password" class="form-control" id="inputPassword"
+                    style="height: 50px; width: 90%; margin-bottom: 20px;" aria-describedby="inputGroup-sizing-default"
+                    placeholder="Contraseña" required>
+                    <div class="input-group mb-3" style="margin-top: 5px !important; font-size: 15px;">
+                        <span id="passstrength"></span>
+                    </div>
+                <input type="password" class="form-control" id="inputConfirmarPassword"
+                    style="height: 50px; width: 90%; margin-bottom: 15px;" aria-describedby="inputGroup-sizing-default"
+                    placeholder="Confirma Contraseña" required>
+                <div style=" text-align: center; margin-left: auto; margin-right: auto; margin-bottom: 2%;">
+                    <button type="submit" class="btnLogin" id="agregar" >Guardar</button>
+                </div>
+                
+            </form>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+   
+    <script src="./RecuperarContraseña.js"></script>
+    <script src="/global/globals.js"></script>
+    <script src="../sessiontime.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

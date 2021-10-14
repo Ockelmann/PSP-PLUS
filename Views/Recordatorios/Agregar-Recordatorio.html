@@ -1,0 +1,86 @@
+<!--Julio García -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSP+ | Agregar-Recordatorio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/Agregar-Recortario.css">
+    <link rel="stylesheet" href="../Navbar/nav.css">
+    <link rel="icon" type="image/png" href="../img/icon.png">
+</head>
+<body>
+    <header id="header">
+  
+    </header>
+    
+    <div class="container">
+
+        <h1 class="titulo">Agregar Recordatorio</h1>
+        
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="descripcion" aria-describedby="inputGroup-sizing-default" placeholder="Descripcion:" required>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default" >Condicion:</span>
+            <select class="form-select" aria-label="Default select example" id="condicion" onchange="selectCondicion()">
+               
+            </select>
+        </div>
+
+        <div class="input-group mb-3" id="proyecto" style="display: none;">
+            <span class="input-group-text" id="inputGroup-sizing-default" >Proyectos:</span>
+            <select class="form-select" aria-label="Default select example" id="proyectos">
+            </select>
+        </div>
+
+        <div class="input-group mb-3" id="fecha" style="display: none;">
+            <span class="input-group-text" id="inputGroup-sizing-default" >Fecha y Hora:</span>
+            <input type="datetime-local" class="form-control" id="fechahora" aria-describedby="inputGroup-sizing-default" placeholder="Fecha" style="color: #000000;" required>
+        </div>
+
+        <div class="input-group mb-3" id="horas" style="display: none;">
+            <input type="text" class="form-control" id="Horas" aria-describedby="inputGroup-sizing-default" placeholder="Horas:" required>
+        </div>
+
+        
+
+        <div class="alert alert-danger" id="alert" role="alert" style="display: none;">
+            Todos los campos son necesarios!
+        </div>
+
+
+        <div style="text-align: center; margin-left: auto; margin-right: auto;  padding-top: 25px;">
+            <button type="button" class="btn" id="agregar" onclick="validar();">Agregar</button>
+        </div>
+
+    </div>
+
+        
+    <footer>
+        <img src="../img/LOGOPLUSTI 2.svg" id="" alt="" width="140px">
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="./js/Agregar-Recordatorio.js"></script>
+    <script src="../Navbar/accionnav.js"></script>
+    <script src="../global/globals.js"></script>
+    <script src="../sessiontime.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    
+    </body>
+</html>

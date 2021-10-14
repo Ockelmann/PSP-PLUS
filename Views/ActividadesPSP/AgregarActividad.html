@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PSP+ | Agregar Actividad</title>
+        <link rel="icon" href="">
+        <!-- CSS Bootstrap v5-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <!-- CSS Main -->
+        <link rel="stylesheet" href="./css/estilos.css" />
+        <link rel="stylesheet" href="../Navbar/nav.css">
+        <link rel="icon" type="image/png" href="../img/icon.png">
+    </head>
+    <body>
+        <header id="header">
+  
+        </header>
+        <div class="contenedor" id="formulario">
+            <center><h1 class="tituloAgregarActividad">Agregar Actividad</h1></center>
+
+            <div class="alert alert-danger" role="alert" id="alert" style="text-align: center; display: none;">
+                Todos los Campos son Obligatorios
+            </div>
+            <div class="alert alert-danger" role="alert" id="alert2" style="text-align: center; display: none;">
+                La fecha de finalización No puede ser mayor a la fecha de comienzo
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Descripción</span>
+                <input id="descripcion" type="text" class="form-control" placeholder="Descripción de la actividad" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Fecha y Hora de Comienzo</span>
+                <input id="fechaHoraInicio" type="datetime-local" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Fecha y Hora de Finalización</span>
+                <input id="fechaHoraFinal" type="datetime-local" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Proyecto:</span>
+                <select class="input-group form-control" id="proyectos-listado" name="proyectos-listado">
+                    <option value="" disabled selected>-- Seleccione un proyecto --</option>
+                    <option value="0">Ninguno proyecto relacionado</option>
+                </select>
+            </div>
+            
+            <div class="btnAgregar">
+                <center><button onclick="validarDatos()">Agregar</button></center>
+            </div>
+            
+
+        </div>
+        <footer>
+            <img src="../img/LOGOPLUSTI 2.svg" id="" alt="" width="140px">
+        </footer>
+        <script src="../Navbar/accionnav.js"></script>
+        
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+        <script src="../global/globals.js"></script>
+        <script src="../sessiontime.js"></script>
+        <script src="./js/agregarActividad.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>    
+    </body>
+</html>
